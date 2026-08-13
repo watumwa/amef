@@ -1934,6 +1934,13 @@ button {
   color: rgba(255, 255, 255, 0.58);
 }
 
+.page-hero--about .breadcrumbs,
+.page-hero--work .breadcrumbs,
+.page-hero--involved .breadcrumbs,
+.page-hero--contact .breadcrumbs {
+  color: rgba(255, 255, 255, 0.62);
+}
+
 .page-hero h1 {
   max-width: 1000px;
   margin: 20px 0 0;
@@ -4157,6 +4164,124 @@ button {
 
   .dialog__note {
     padding: 0 20px 22px;
+  }
+}
+
+/* Compact mobile type scale */
+@media (max-width: 620px) {
+  .section,
+  .inner-section {
+    padding-block: 62px;
+  }
+
+  .hero,
+  .hero__inner {
+    min-height: 660px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.8rem, 12vw, 3.45rem);
+    line-height: 0.94;
+  }
+
+  .hero__lead {
+    font-size: 0.92rem;
+  }
+
+  .section-title {
+    font-size: clamp(2.1rem, 9.5vw, 2.9rem);
+    line-height: 1.02;
+  }
+
+  .page-hero,
+  .page-hero--sifa {
+    min-height: 445px;
+  }
+
+  .page-hero--sifa {
+    min-height: 610px;
+  }
+
+  .page-hero h1,
+  .page-hero--sifa h1,
+  .school-hero h1 {
+    font-size: clamp(2.65rem, 11.5vw, 3.45rem);
+    line-height: 0.96;
+  }
+
+  .page-hero__inner > p:last-child,
+  .page-hero__inner > p:nth-last-child(2),
+  .school-hero__inner > p {
+    font-size: 0.91rem;
+    line-height: 1.65;
+  }
+
+  .school-hero,
+  .school-hero__inner {
+    min-height: 620px;
+  }
+
+  .editorial-copy h2,
+  .page-heading h2,
+  .contact-page__details h2,
+  .partnership-panel h2,
+  .get-involved-final h2,
+  .school-callout h2 {
+    font-size: clamp(2.05rem, 9vw, 2.75rem);
+    line-height: 1.03;
+  }
+
+  .editorial-copy .lead,
+  .story__intro .story__lead {
+    font-size: 1.12rem;
+    line-height: 1.5;
+  }
+
+  .story-card > p,
+  .memory-panel blockquote {
+    font-size: 1.65rem;
+    line-height: 1.18;
+  }
+
+  .impact-card h3,
+  .program-card h3 {
+    font-size: 1.75rem;
+    line-height: 1.08;
+  }
+
+  .school-promise h3,
+  .sifa-audience h2,
+  .cta-band h2 {
+    font-size: 2.05rem;
+    line-height: 1.04;
+  }
+
+  .sifa-statement strong {
+    font-size: 2.2rem;
+    line-height: 1.02;
+  }
+
+  .support-card h3,
+  .launch__copy h2,
+  .launch-story .page-heading h2,
+  .next-page h2 {
+    font-size: 1.9rem;
+    line-height: 1.06;
+  }
+
+  .contact-links h3,
+  .timeline h3,
+  .learning-card h3,
+  .pathway h3 {
+    font-size: 1.45rem;
+  }
+
+  .skills__shape strong {
+    font-size: 1.3rem;
+  }
+
+  .mobile-menu a {
+    font-size: 1.05rem;
   }
 }
 
