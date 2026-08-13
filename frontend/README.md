@@ -32,4 +32,5 @@ Vercel is configured from the repository root through `../vercel.json`; do not s
 - The hero is custom editorial artwork created for this concept. It is illustrative, not documentary photography.
 - The logo is a temporary web-native brand mark and should be replaced if the client supplies an official logo.
 - The contact forms are fully validated in the browser but intentionally do not send externally. Connect them to the client’s confirmed inbox or form service before launch.
+- WhatsApp uses the publicly listed AMHS number. Facebook, Instagram, YouTube and TikTok icons remain visibly marked as pending until the client confirms the exact profile URLs.
 - No phone number, email address, payment gateway or staff details were invented. Add those once the client confirms them.
