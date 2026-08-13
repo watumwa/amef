@@ -1,6 +1,7 @@
 const menuToggle = document.querySelector("[data-menu-toggle]");
 const mobileMenu = document.querySelector("[data-mobile-menu]");
 const header = document.querySelector("[data-header]");
+const navDropdowns = [...document.querySelectorAll("[data-nav-dropdown]")];
 
 function setMenu(open) {
   menuToggle?.setAttribute("aria-expanded", String(open));
@@ -14,6 +15,28 @@ menuToggle?.addEventListener("click", () => {
 
 mobileMenu?.querySelectorAll("a, button").forEach((item) => {
   item.addEventListener("click", () => setMenu(false));
+});
+
+function closeNavDropdowns(except = null) {
+  navDropdowns.forEach((dropdown) => {
+    if (dropdown === except) return;
+    dropdown.classList.remove("is-open");
+    dropdown.querySelector(".nav-dropdown__toggle")?.setAttribute("aria-expanded", "false");
+  });
+}
+
+navDropdowns.forEach((dropdown) => {
+  const toggle = dropdown.querySelector(".nav-dropdown__toggle");
+  toggle?.addEventListener("click", () => {
+    const open = !dropdown.classList.contains("is-open");
+    closeNavDropdowns(dropdown);
+    dropdown.classList.toggle("is-open", open);
+    toggle.setAttribute("aria-expanded", String(open));
+  });
+});
+
+document.addEventListener("click", (event) => {
+  if (!event.target.closest("[data-nav-dropdown]")) closeNavDropdowns();
 });
 
 window.addEventListener("scroll", () => {
@@ -95,5 +118,7 @@ contactForm?.addEventListener("submit", (event) => {
 document.querySelector("[data-current-year]").textContent = new Date().getFullYear();
 
 document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape" && menuToggle?.getAttribute("aria-expanded") === "true") setMenu(false);
+  if (event.key !== "Escape") return;
+  closeNavDropdowns();
+  if (menuToggle?.getAttribute("aria-expanded") === "true") setMenu(false);
 });

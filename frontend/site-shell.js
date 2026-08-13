@@ -1,11 +1,40 @@
 const page = document.body.dataset.page || "";
 
 const navItems = [
-  ["about", "/about/", "About"],
-  ["work", "/our-work/", "Our work"],
-  ["amhs", "/amhs/", "AMHS"],
-  ["sifa", "/sifa-skilling-centre/", "Sifa Centre"],
-  ["contact", "/contact/", "Contact"],
+  { id: "home", href: "/", label: "Home" },
+  {
+    id: "about",
+    label: "About Us",
+    children: [
+      ["/about/#who-we-are", "Who we are"],
+      ["/about/#our-history", "Our History"],
+      ["/about/#our-team", "Our Team"],
+      ["/get-involved/?interest=Partnership", "Patners"],
+      ["/#story", "Success Stories"],
+    ],
+  },
+  {
+    id: "work",
+    activePages: ["work", "amhs", "sifa"],
+    label: "What we Do",
+    children: [
+      ["/our-work/#education", "Education"],
+      ["/our-work/#health-care", "Health Care"],
+      ["/our-work/#livelihood", "Livelihood"],
+    ],
+  },
+  {
+    id: "involved",
+    label: "Get Involved",
+    children: [
+      ["/get-involved/#donate", "Donate"],
+      ["/contact/?interest=Sponsor+a+Child", "Sponsor a Child"],
+      ["/contact/?interest=Volunteer", "Become a Volunteer"],
+      ["/contact/?interest=Careers", "Careers"],
+    ],
+  },
+  { id: "news", href: "/#news-and-updates", label: "News & Updates" },
+  { id: "contact", href: "/contact/", label: "Contact Us" },
 ];
 
 const iconSprite = `
@@ -21,7 +50,11 @@ const iconSprite = `
     <symbol id="icon-school" viewBox="0 0 24 24"><path d="m3 10 9-6 9 6M5 9v10M19 9v10M3 20h18M9 20v-6h6v6"/></symbol>
     <symbol id="icon-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
     <symbol id="icon-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="icon-chevron" viewBox="0 0 24 24"><path d="m7 10 5 5 5-5"/></symbol>
     <symbol id="icon-location" viewBox="0 0 24 24"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+    <symbol id="icon-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92Z"/></symbol>
+    <symbol id="icon-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+    <symbol id="icon-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
     <symbol id="icon-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
     <symbol id="icon-quote" viewBox="0 0 24 24"><path d="M3 21c3 0 7-1 7-8V5H3v8h4c0 4-1 5-4 5v3ZM14 21c3 0 7-1 7-8V5h-7v8h4c0 4-1 5-4 5v3Z"/></symbol>
     <symbol id="icon-facebook" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M14.2 8.2h3.2V4.3a19 19 0 0 0-2.9-.3c-2.9 0-4.9 1.8-4.9 5v2.8H6.3v4.4h3.3V24h4.1v-7.8h3.4l.6-4.4h-4V9.4c0-.8.2-1.2.5-1.2Z"/></symbol>
@@ -31,15 +64,46 @@ const iconSprite = `
     <symbol id="icon-whatsapp" viewBox="0 0 24 24"><path d="M20.5 11.8a8.5 8.5 0 0 1-12.6 7.5L3 21l1.6-4.7a8.5 8.5 0 1 1 15.9-4.5Z"/><path d="M8.2 7.8c.3 3.9 2.2 5.8 6 7.1l1.7-1.6-2.2-1.1-.8.9c-1.6-.6-2.8-1.8-3.4-3.3l.9-.8-1.1-2.2-1.1 1Z"/></symbol>
   </svg>`;
 
-const brand = (footer = false) => `
-  <a class="brand${footer ? " brand--footer" : ""}" href="/" aria-label="AMEF home">
+const brand = (footer = false) => footer ? `
+  <a class="brand brand--footer" href="/" aria-label="AMEF home">
     <span class="brand__mark" aria-hidden="true">
-      <svg viewBox="0 0 48 48"><path class="brand__book" d="M6 12.5c7.7 0 13.5 2 18 6 4.5-4 10.3-6 18-6v23c-7.7 0-13.5 2-18 6-4.5-4-10.3-6-18-6v-23Z"/><path class="brand__spine" d="M24 19v22"/><path class="brand__sun" d="M24 5v7M15.5 8.5l4.5 5M32.5 8.5l-4.5 5"/></svg>
+      <img src="/assets/main-logo.png" alt="AMEF logo" />
     </span>
     <span class="brand__copy"><strong>AMEF</strong><small>Asaba Memorial Education Foundation</small></span>
+  </a>` : `
+  <a class="brand brand--navbar" href="/" aria-label="AMEF home">
+    <img class="brand__logo" src="/assets/main-logo.png" alt="Asaba Memorial Education Foundation" />
   </a>`;
 
-const links = navItems.map(([id, href, label]) => `<a href="${href}"${page === id ? ' class="is-active" aria-current="page"' : ""}>${label}</a>`).join("");
+const isNavItemActive = (item) => (item.activePages || [item.id]).includes(page);
+
+const desktopLinks = navItems.map((item) => {
+  const active = isNavItemActive(item);
+  if (!item.children) {
+    return `<a class="nav-link${active ? " is-active" : ""}" href="${item.href}"${active ? ' aria-current="page"' : ""}>${item.label}</a>`;
+  }
+
+  return `
+    <div class="nav-dropdown${active ? " is-active" : ""}" data-nav-dropdown>
+      <button class="nav-dropdown__toggle" type="button" aria-expanded="false">
+        ${item.label}
+        <svg class="icon" aria-hidden="true"><use href="#icon-chevron"></use></svg>
+      </button>
+      <div class="nav-dropdown__menu">
+        ${item.children.map(([href, label]) => `<a href="${href}">${label}</a>`).join("")}
+      </div>
+    </div>`;
+}).join("");
+
+const mobileLinks = navItems.map((item) => {
+  if (!item.children) return `<a href="${item.href}">${item.label}</a>`;
+
+  return `
+    <details class="mobile-nav-group"${isNavItemActive(item) ? " open" : ""}>
+      <summary>${item.label}<svg class="icon" aria-hidden="true"><use href="#icon-chevron"></use></svg></summary>
+      <div>${item.children.map(([href, label]) => `<a href="${href}">${label}</a>`).join("")}</div>
+    </details>`;
+}).join("");
 
 const socialLinks = `
   <div class="footer-social">
@@ -58,15 +122,52 @@ const headerTarget = document.querySelector("[data-site-header]");
 if (headerTarget) {
   headerTarget.outerHTML = `
     <header class="site-header" data-header>
-      <div class="topbar"><div class="container topbar__inner"><p>Education that reaches every child</p><span class="topbar__location"><svg class="icon" aria-hidden="true"><use href="#icon-location"></use></svg>Kiruli Sub-county, Uganda</span></div></div>
+      <div class="topbar">
+        <div class="container topbar__inner">
+          <div class="topbar__left">
+            <p>Education that reaches every child</p>
+            <a class="topbar__link" href="tel:+256775749226">
+              <svg class="icon" aria-hidden="true"><use href="#icon-phone"></use></svg>
+              <span>+256 775 749226</span>
+            </a>
+            <a class="topbar__link" href="mailto:info@amef.org">
+              <svg class="icon" aria-hidden="true"><use href="#icon-mail"></use></svg>
+              <span>info@amef.org</span>
+            </a>
+          </div>
+          <div class="topbar__right">
+            <div class="topbar__social" aria-label="AMEF social media">
+              <a class="social-icon social-icon--pending" href="#" aria-label="Facebook profile link pending" title="Facebook">
+                <svg aria-hidden="true"><use href="#icon-facebook"></use></svg>
+              </a>
+              <a class="social-icon social-icon--pending" href="#" aria-label="Instagram profile link pending" title="Instagram">
+                <svg aria-hidden="true"><use href="#icon-instagram"></use></svg>
+              </a>
+              <a class="social-icon social-icon--pending" href="#" aria-label="YouTube channel link pending" title="YouTube">
+                <svg aria-hidden="true"><use href="#icon-youtube"></use></svg>
+              </a>
+              <a class="social-icon social-icon--pending" href="#" aria-label="TikTok profile link pending" title="TikTok">
+                <svg aria-hidden="true"><use href="#icon-tiktok"></use></svg>
+              </a>
+            </div>
+            <form class="topbar__search" action="/search" method="get">
+              <label for="topbar-search" class="sr-only">Search</label>
+              <input id="topbar-search" type="search" name="q" placeholder="Search..." />
+              <button type="submit" aria-label="Search">
+                <svg class="icon" aria-hidden="true"><use href="#icon-search"></use></svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
       <nav class="navbar" aria-label="Main navigation">
         <div class="container navbar__inner">
           ${brand()}
           <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-toggle><span class="sr-only">Open menu</span><svg class="icon menu-toggle__open" aria-hidden="true"><use href="#icon-menu"></use></svg><svg class="icon menu-toggle__close" aria-hidden="true"><use href="#icon-close"></use></svg></button>
-          <div class="nav-links">${links}</div>
-          <a class="button button--maroon navbar__cta" href="/get-involved/">Support our work <svg class="icon" aria-hidden="true"><use href="#icon-arrow"></use></svg></a>
+          <div class="nav-links">${desktopLinks}</div>
+          <a class="button button--maroon navbar__cta" href="/get-involved/#donate">Donate <svg class="icon" aria-hidden="true"><use href="#icon-heart"></use></svg></a>
         </div>
-        <div class="mobile-menu" id="mobile-menu" data-mobile-menu><div class="container mobile-menu__inner">${links}<a class="button button--gold" href="/get-involved/">Support our work</a></div></div>
+        <div class="mobile-menu" id="mobile-menu" data-mobile-menu><div class="container mobile-menu__inner">${mobileLinks}<a class="button button--gold" href="/get-involved/#donate">Donate</a></div></div>
       </nav>
     </header>`;
 }
@@ -90,6 +191,7 @@ document.body.insertAdjacentHTML("afterbegin", iconSprite);
 const menuToggle = document.querySelector("[data-menu-toggle]");
 const mobileMenu = document.querySelector("[data-mobile-menu]");
 const header = document.querySelector("[data-header]");
+const navDropdowns = [...document.querySelectorAll("[data-nav-dropdown]")];
 
 const setMenu = (open) => {
   menuToggle?.setAttribute("aria-expanded", String(open));
@@ -99,8 +201,31 @@ const setMenu = (open) => {
 
 menuToggle?.addEventListener("click", () => setMenu(menuToggle.getAttribute("aria-expanded") !== "true"));
 mobileMenu?.querySelectorAll("a").forEach((item) => item.addEventListener("click", () => setMenu(false)));
+const closeNavDropdowns = (except = null) => {
+  navDropdowns.forEach((dropdown) => {
+    if (dropdown === except) return;
+    dropdown.classList.remove("is-open");
+    dropdown.querySelector(".nav-dropdown__toggle")?.setAttribute("aria-expanded", "false");
+  });
+};
+navDropdowns.forEach((dropdown) => {
+  const toggle = dropdown.querySelector(".nav-dropdown__toggle");
+  toggle?.addEventListener("click", () => {
+    const open = !dropdown.classList.contains("is-open");
+    closeNavDropdowns(dropdown);
+    dropdown.classList.toggle("is-open", open);
+    toggle.setAttribute("aria-expanded", String(open));
+  });
+});
+document.addEventListener("click", (event) => {
+  if (!event.target.closest("[data-nav-dropdown]")) closeNavDropdowns();
+});
 window.addEventListener("scroll", () => header?.classList.toggle("is-scrolled", window.scrollY > 24), { passive: true });
-document.addEventListener("keydown", (event) => event.key === "Escape" && setMenu(false));
+document.addEventListener("keydown", (event) => {
+  if (event.key !== "Escape") return;
+  closeNavDropdowns();
+  setMenu(false);
+});
 
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
