@@ -501,6 +501,17 @@ button {
   width: 280px;
 }
 
+.brand--footer {
+  min-width: 0;
+  width: auto;
+  justify-content: flex-start;
+}
+
+.brand--footer .brand__logo {
+  width: auto;
+  height: 72px;
+}
+
 .brand__logo {
   width: 100%;
   height: 84px;
@@ -1808,7 +1819,7 @@ button {
 }
 
 .footer-social {
-  margin-top: 27px;
+  margin-top: 48px;
 }
 
 .footer-social > p {
