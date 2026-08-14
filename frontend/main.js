@@ -122,3 +122,133 @@ document.addEventListener("keydown", (event) => {
   closeNavDropdowns();
   if (menuToggle?.getAttribute("aria-expanded") === "true") setMenu(false);
 });
+
+const heroSlider = document.querySelector("[data-hero-slider]");
+const heroSlides = heroSlider ? [...heroSlider.querySelectorAll(".hero-slide")] : [];
+const heroDotsContainer = document.querySelector("[data-hero-dots]");
+const heroCurrent = document.querySelector("[data-hero-current]");
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+if (heroSlider && heroSlides.length > 0) {
+  let current = 0;
+  let heroTimer;
+
+  const dots = heroSlides.map((_, i) => {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "hero-slider__dot" + (i === 0 ? " is-active" : "");
+    btn.setAttribute("aria-label", `Go to slide ${i + 1}`);
+    btn.setAttribute("aria-current", i === 0 ? "true" : "false");
+    btn.addEventListener("click", () => {
+      goTo(i);
+      restartHeroTimer();
+    });
+    return btn;
+  });
+
+  heroDotsContainer?.append(...dots);
+
+  function goTo(index) {
+    current = (index + heroSlides.length) % heroSlides.length;
+    heroSlides.forEach((slide, i) => {
+      const active = i === current;
+      slide.classList.toggle("hero-slide--active", active);
+      slide.setAttribute("aria-hidden", String(!active));
+      slide.inert = !active;
+    });
+    dots.forEach((dot, i) => {
+      const active = i === current;
+      dot.classList.toggle("is-active", active);
+      dot.setAttribute("aria-current", String(active));
+    });
+    if (heroCurrent) heroCurrent.textContent = String(current + 1).padStart(2, "0");
+  }
+
+  function stopHeroTimer() {
+    window.clearInterval(heroTimer);
+  }
+
+  function startHeroTimer() {
+    if (!reduceMotion.matches && !document.hidden) {
+      heroTimer = window.setInterval(() => goTo(current + 1), 6500);
+    }
+  }
+
+  function restartHeroTimer() {
+    stopHeroTimer();
+    startHeroTimer();
+  }
+
+  heroSlider.querySelector(".hero-slider__btn--prev")?.addEventListener("click", () => {
+    goTo(current - 1);
+    restartHeroTimer();
+  });
+  heroSlider.querySelector(".hero-slider__btn--next")?.addEventListener("click", () => {
+    goTo(current + 1);
+    restartHeroTimer();
+  });
+  heroSlider.addEventListener("mouseenter", stopHeroTimer);
+  heroSlider.addEventListener("mouseleave", startHeroTimer);
+  heroSlider.addEventListener("focusin", stopHeroTimer);
+  heroSlider.addEventListener("focusout", startHeroTimer);
+  document.addEventListener("visibilitychange", restartHeroTimer);
+  reduceMotion.addEventListener("change", restartHeroTimer);
+
+  goTo(0);
+  startHeroTimer();
+}
+
+const partnerCarousel = document.querySelector("[data-partner-carousel]");
+const partnerTrack = partnerCarousel?.querySelector(".partner-carousel__track");
+
+if (partnerCarousel && partnerTrack) {
+  let partnerTimer;
+
+  function partnerStep() {
+    const card = partnerTrack.querySelector(".partner-card");
+    if (!card) return 0;
+    const gap = Number.parseFloat(getComputedStyle(partnerTrack).gap) || 0;
+    return card.getBoundingClientRect().width + gap;
+  }
+
+  function movePartners(direction = 1) {
+    const step = partnerStep();
+    const atEnd = partnerTrack.scrollLeft + partnerTrack.clientWidth >= partnerTrack.scrollWidth - step / 2;
+    const atStart = partnerTrack.scrollLeft <= step / 2;
+    const left = direction > 0 && atEnd
+      ? 0
+      : direction < 0 && atStart
+        ? partnerTrack.scrollWidth
+        : partnerTrack.scrollLeft + step * direction;
+    partnerTrack.scrollTo({ left, behavior: reduceMotion.matches ? "auto" : "smooth" });
+  }
+
+  function stopPartnerTimer() {
+    window.clearInterval(partnerTimer);
+  }
+
+  function startPartnerTimer() {
+    if (!reduceMotion.matches && !document.hidden) {
+      partnerTimer = window.setInterval(() => movePartners(1), 4200);
+    }
+  }
+
+  function restartPartnerTimer() {
+    stopPartnerTimer();
+    startPartnerTimer();
+  }
+
+  document.querySelector("[data-partner-prev]")?.addEventListener("click", () => {
+    movePartners(-1);
+    restartPartnerTimer();
+  });
+  document.querySelector("[data-partner-next]")?.addEventListener("click", () => {
+    movePartners(1);
+    restartPartnerTimer();
+  });
+  partnerCarousel.addEventListener("mouseenter", stopPartnerTimer);
+  partnerCarousel.addEventListener("mouseleave", startPartnerTimer);
+  partnerCarousel.addEventListener("focusin", stopPartnerTimer);
+  partnerCarousel.addEventListener("focusout", startPartnerTimer);
+  startPartnerTimer();
+}

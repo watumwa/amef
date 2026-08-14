@@ -23,15 +23,16 @@ const m=document.body.dataset.page||"",c=[{id:"home",href:"/",label:"Home"},{id:
     <symbol id="icon-youtube" viewBox="0 0 24 24"><path d="M22 12s0-4-1-5c-1-1-3-1-9-1s-8 0-9 1-1 5-1 5 0 4 1 5 3 1 9 1 8 0 9-1 1-5 1-5Z"/><path d="m10 9 5 3-5 3V9Z"/></symbol>
     <symbol id="icon-tiktok" viewBox="0 0 24 24"><path d="M15 4v10.3a4.3 4.3 0 1 1-4-4.3M15 4c.5 2.8 2.2 4.5 5 5"/></symbol>
     <symbol id="icon-whatsapp" viewBox="0 0 24 24"><path d="M20.5 11.8a8.5 8.5 0 0 1-12.6 7.5L3 21l1.6-4.7a8.5 8.5 0 1 1 15.9-4.5Z"/><path d="M8.2 7.8c.3 3.9 2.2 5.8 6 7.1l1.7-1.6-2.2-1.1-.8.9c-1.6-.6-2.8-1.8-3.4-3.3l.9-.8-1.1-2.2-1.1 1Z"/></symbol>
+    <symbol id="icon-location" viewBox="0 0 24 24"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
   </svg>`,d=(e=!1)=>e?`
   <a class="brand brand--footer" href="/" aria-label="AMEF home">
     <span class="brand__mark" aria-hidden="true">
-      <svg viewBox="0 0 48 48"><path class="brand__book" d="M6 12.5c7.7 0 13.5 2 18 6 4.5-4 10.3-6 18-6v23c-7.7 0-13.5 2-18 6-4.5-4-10.3-6-18-6v-23Z"/><path class="brand__spine" d="M24 19v22"/><path class="brand__sun" d="M24 5v7M15.5 8.5l4.5 5M32.5 8.5l-4.5 5"/></svg>
+      <img src="/assets/main-logo.png" alt="AMEF logo" />
     </span>
     <span class="brand__copy"><strong>AMEF</strong><small>Asaba Memorial Education Foundation</small></span>
   </a>`:`
   <a class="brand brand--navbar" href="/" aria-label="AMEF home">
-    <img class="brand__logo" src="/assets/logo-home.png" alt="Asaba Memorial Education Foundation" />
+    <img class="brand__logo" src="/assets/main-logo.png" alt="Asaba Memorial Education Foundation" />
   </a>`,h=e=>(e.activePages||[e.id]).includes(m),f=c.map(e=>{const a=h(e);return e.children?`
     <div class="nav-dropdown${a?" is-active":""}" data-nav-dropdown>
       <button class="nav-dropdown__toggle" type="button" aria-expanded="false">
@@ -61,7 +62,6 @@ const m=document.body.dataset.page||"",c=[{id:"home",href:"/",label:"Home"},{id:
       <div class="topbar">
         <div class="container topbar__inner">
           <div class="topbar__left">
-            <p>Education that reaches every child</p>
             <a class="topbar__link" href="tel:+256775749226">
               <svg class="icon" aria-hidden="true"><use href="#icon-phone"></use></svg>
               <span>+256 775 749226</span>
@@ -69,6 +69,10 @@ const m=document.body.dataset.page||"",c=[{id:"home",href:"/",label:"Home"},{id:
             <a class="topbar__link" href="mailto:info@amef.org">
               <svg class="icon" aria-hidden="true"><use href="#icon-mail"></use></svg>
               <span>info@amef.org</span>
+            </a>
+            <a class="topbar__link" href="https://maps.google.com" target="_blank" rel="noreferrer">
+              <svg class="icon" aria-hidden="true"><use href="#icon-location"></use></svg>
+              <span>Masindi, Uganda</span>
             </a>
           </div>
           <div class="topbar__right">

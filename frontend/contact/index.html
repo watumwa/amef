@@ -14,48 +14,92 @@
     <div data-site-header></div>
 
     <main id="main-content">
-      <section class="page-hero page-hero--contact">
-        <div class="container page-hero__inner reveal">
-          <nav class="breadcrumbs breadcrumbs--light" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><span>Contact</span></nav>
-          <p class="eyebrow eyebrow--gold"><span></span> Contact AMEF</p>
-          <h1>Start a conversation that can change a future.</h1>
-          <p>Tell us whether you are interested in a learner, a programme, a partnership or another way to move opportunity forward.</p>
+      <section class="contact-hero" aria-labelledby="contact-title">
+        <div class="contact-hero__pattern" aria-hidden="true"></div>
+        <div class="container contact-hero__inner reveal">
+          <nav class="breadcrumbs breadcrumbs--light" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><span>Contact Us</span></nav>
+          <p class="eyebrow eyebrow--gold"><span></span> Contact Us</p>
+          <h1 id="contact-title">Let’s start a meaningful <em>conversation.</em></h1>
+          <p>Whether you have a question, an idea or a desire to support our work, the AMEF team would be glad to hear from you.</p>
         </div>
       </section>
 
-      <section class="inner-section contact-page">
-        <div class="container contact-page__grid">
-          <div class="contact-page__details reveal">
-            <p class="eyebrow"><span></span> Let’s work together</p>
-            <h2>We would like to hear from you.</h2>
-            <p>Use the form to share your interest. Once the client confirms official contact details, this page is ready to display and route inquiries to the right team.</p>
-            <div class="contact-detail-card"><svg class="icon" aria-hidden="true"><use href="#icon-location"></use></svg><div><span>Serving communities in</span><strong>Kiruli Sub-county, Uganda</strong></div></div>
-            <div class="contact-pending"><span>Launch note</span><p>Official email and telephone details have not been supplied, so none have been invented for this preview.</p></div>
+      <section class="inner-section get-in-touch" aria-labelledby="get-in-touch-title">
+        <div class="container">
+          <div class="contact-section-heading reveal">
+            <div><p class="eyebrow"><span></span> Get in touch</p><h2 id="get-in-touch-title">Reach AMEF directly.</h2></div>
+            <p>Choose the contact method that works best for you. We welcome inquiries about our programmes, partnerships and ways to get involved.</p>
           </div>
 
-          <form class="contact-form reveal" data-contact-form>
+          <div class="contact-methods">
+            <article class="contact-method reveal">
+              <span class="contact-method__icon"><svg class="icon" aria-hidden="true"><use href="#icon-location"></use></svg></span>
+              <p>Location</p>
+              <h3>Masindi, Uganda</h3>
+              <a href="#location-map">View on the map <svg class="icon" aria-hidden="true"><use href="#icon-arrow"></use></svg></a>
+            </article>
+            <article class="contact-method reveal">
+              <span class="contact-method__icon"><svg class="icon" aria-hidden="true"><use href="#icon-phone"></use></svg></span>
+              <p>Phone</p>
+              <h3><a href="tel:+256775749226">+256 775 749226</a></h3>
+              <a href="tel:+256775749226">Call AMEF <svg class="icon" aria-hidden="true"><use href="#icon-arrow"></use></svg></a>
+            </article>
+            <article class="contact-method reveal">
+              <span class="contact-method__icon"><svg class="icon" aria-hidden="true"><use href="#icon-mail"></use></svg></span>
+              <p>Email</p>
+              <h3><a href="mailto:info@amef.org">info@amef.org</a></h3>
+              <a href="mailto:info@amef.org">Send an email <svg class="icon" aria-hidden="true"><use href="#icon-arrow"></use></svg></a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="inner-section inquiry-section" aria-labelledby="inquiry-title">
+        <div class="container inquiry-layout">
+          <div class="inquiry-intro reveal">
+            <p class="eyebrow"><span></span> Inquiries</p>
+            <h2 id="inquiry-title">How can we help?</h2>
+            <p>Share a few details below and help us understand what you would like to discuss.</p>
+            <div class="inquiry-intro__note"><strong>Prefer to speak directly?</strong><p>Call <a href="tel:+256775749226">+256 775 749226</a> or email <a href="mailto:info@amef.org">info@amef.org</a>.</p></div>
+          </div>
+
+          <form class="contact-form inquiry-form reveal" data-contact-form>
             <div class="contact-form__row">
-              <label><span>Your name</span><input type="text" name="name" placeholder="Enter your name" autocomplete="name" required /></label>
+              <label><span>Full name</span><input type="text" name="name" placeholder="Enter your full name" autocomplete="name" required /></label>
               <label><span>Email address</span><input type="email" name="email" placeholder="you@example.org" autocomplete="email" required /></label>
             </div>
             <div class="contact-form__row">
-              <label><span>Organisation <em>(optional)</em></span><input type="text" name="organisation" placeholder="Organisation name" autocomplete="organization" /></label>
-              <label><span>I’m interested in</span><select name="interest" data-interest><option value="Partnership">Building a partnership</option><option value="Education">Supporting education</option><option value="Skills">Supporting skills training</option><option value="Health and WASH">Health, water and sanitation</option><option value="General">Something else</option></select></label>
+              <label><span>Phone number <em>(optional)</em></span><input type="tel" name="phone" placeholder="e.g. +256 700 000000" autocomplete="tel" /></label>
+              <label><span>Inquiry about</span><select name="interest" data-interest required><option value="" disabled>Select a subject</option><option value="General">General inquiry</option><option value="Partnership">Partnership</option><option value="Education">Education programmes</option><option value="Skills">Skills training</option><option value="Health and WASH">Health, water and sanitation</option><option value="Volunteer">Volunteering</option><option value="Careers">Careers</option></select></label>
             </div>
-            <label><span>Message</span><textarea name="message" rows="6" placeholder="Tell us a little about how you would like to get involved" required></textarea></label>
-            <div class="contact-form__footer"><button class="button button--maroon" type="submit">Send your interest <svg class="icon" aria-hidden="true"><use href="#icon-arrow"></use></svg></button><p class="form-note">Demo form—ready to connect to the client’s confirmed inbox.</p></div>
+            <label><span>Your message</span><textarea name="message" rows="7" placeholder="Write your inquiry here…" required></textarea></label>
+            <div class="contact-form__footer">
+              <button class="button button--maroon" type="submit">Submit inquiry <svg class="icon" aria-hidden="true"><use href="#icon-arrow"></use></svg></button>
+              <p class="form-note">This preview does not send data yet. Connect the form to AMEF’s confirmed inbox before launch.</p>
+            </div>
             <p class="form-status" role="status" aria-live="polite" data-form-status></p>
           </form>
         </div>
       </section>
 
-      <section class="inner-section inner-section--cream">
+      <section class="inner-section map-section" id="location-map" aria-labelledby="map-title">
         <div class="container">
-          <div class="page-heading reveal"><p class="eyebrow"><span></span> Find the right starting point</p><h2>What would you like to discuss?</h2></div>
-          <div class="contact-links">
-            <a class="reveal" href="/amhs/"><span>Education</span><h3>Asaba Memorial High School</h3><svg class="icon" aria-hidden="true"><use href="#icon-arrow"></use></svg></a>
-            <a class="reveal" href="/sifa-skilling-centre/"><span>Skills</span><h3>Sifa Skilling Centre</h3><svg class="icon" aria-hidden="true"><use href="#icon-arrow"></use></svg></a>
-            <a class="reveal" href="/get-involved/"><span>Support</span><h3>Ways to get involved</h3><svg class="icon" aria-hidden="true"><use href="#icon-arrow"></use></svg></a>
+          <div class="contact-section-heading map-heading reveal">
+            <div><p class="eyebrow"><span></span> Our location</p><h2 id="map-title">Find us in Masindi.</h2></div>
+            <p>The map shows Masindi, Uganda. A precise office pin can be added when AMEF confirms its street-level location.</p>
+          </div>
+          <div class="contact-map reveal">
+            <iframe
+              title="Map showing AMEF's location in Masindi, Uganda"
+              src="https://www.google.com/maps?q=Masindi%2C%20Uganda&amp;output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen
+            ></iframe>
+            <div class="contact-map__card">
+              <span class="contact-method__icon"><svg class="icon" aria-hidden="true"><use href="#icon-location"></use></svg></span>
+              <div><p>AMEF</p><h3>Masindi, Uganda</h3><a href="https://www.google.com/maps/search/?api=1&amp;query=Masindi%2C%20Uganda" target="_blank" rel="noopener noreferrer">Open in Google Maps <svg class="icon" aria-hidden="true"><use href="#icon-arrow"></use></svg></a></div>
+            </div>
           </div>
         </div>
       </section>
