@@ -10,6 +10,8 @@ A responsive multi-page website for the Asaba Memorial Education Foundation, bui
 - `/amhs/` — Asaba Memorial High School
 - `/sifa-skilling-centre/` — Sifa Skilling Centre
 - `/get-involved/` — Support and partnership pathways
+- `/sponsor-a-child/` — Child sponsorship information and interest pathway
+- `/careers/` — Confirmed vacancies and future career guidance
 - `/contact/` — Contact and inquiry form
 
 ## Run locally

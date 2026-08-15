@@ -25,12 +25,13 @@ const navItems = [
   },
   {
     id: "involved",
+    activePages: ["involved", "sponsor", "careers"],
     label: "Get Involved",
     children: [
       ["/get-involved/#donate", "Donate"],
-      ["/contact/?interest=Sponsor+a+Child", "Sponsor a Child"],
+      ["/sponsor-a-child/", "Sponsor a Child"],
       ["/contact/?interest=Volunteer", "Become a Volunteer"],
-      ["/contact/?interest=Careers", "Careers"],
+      ["/careers/", "Careers"],
     ],
   },
   { id: "news", href: "/#news-and-updates", label: "News & Updates" },
@@ -48,6 +49,7 @@ const iconSprite = `
     <symbol id="icon-droplet" viewBox="0 0 24 24"><path d="M12 22a7 7 0 0 0 7-7c0-5-7-13-7-13S5 10 5 15a7 7 0 0 0 7 7Z"/></symbol>
     <symbol id="icon-seedling" viewBox="0 0 24 24"><path d="M12 22V10M7 15c-3 0-5-2-5-6 4 0 7 2 7 5M17 12c3 0 5-2 5-6-4 0-7 2-7 5"/></symbol>
     <symbol id="icon-school" viewBox="0 0 24 24"><path d="m3 10 9-6 9 6M5 9v10M19 9v10M3 20h18M9 20v-6h6v6"/></symbol>
+    <symbol id="icon-briefcase" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18M10 12v2h4v-2"/></symbol>
     <symbol id="icon-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
     <symbol id="icon-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
     <symbol id="icon-chevron" viewBox="0 0 24 24"><path d="m7 10 5 5 5-5"/></symbol>
@@ -130,9 +132,9 @@ if (headerTarget) {
               <svg class="icon" aria-hidden="true"><use href="#icon-phone"></use></svg>
               <span>+256 775 749226</span>
             </a>
-            <a class="topbar__link" href="mailto:info@amef.org">
+            <a class="topbar__link" href="mailto:info@amefuganda.org">
               <svg class="icon" aria-hidden="true"><use href="#icon-mail"></use></svg>
-              <span>info@amef.org</span>
+              <span>info@amefuganda.org</span>
             </a>
             <a class="topbar__link" href="https://maps.google.com" target="_blank" rel="noreferrer">
               <svg class="icon" aria-hidden="true"><use href="#icon-location"></use></svg>
@@ -181,9 +183,23 @@ if (footerTarget) {
   footerTarget.outerHTML = `
     <footer class="footer">
       <div class="container footer__grid">
-        <div class="footer__brand">${brand(true)}<p>Turning remembrance into action, hopelessness into hope, and potential into opportunity.</p>${socialLinks}</div>
-        <div class="footer__links"><h3>Explore</h3><a href="/about/">Our story</a><a href="/our-work/">What we do</a><a href="/get-involved/">Get involved</a><a href="/contact/">Contact</a></div>
-        <div class="footer__links"><h3>Our work</h3><a href="/amhs/">Asaba Memorial High School</a><a href="/sifa-skilling-centre/">Sifa Skilling Centre</a><a href="/our-work/">Health & awareness</a><a href="/our-work/">Livelihoods</a></div>
+        <div class="footer__brand">
+          <a class="brand brand--footer" href="/" aria-label="AMEF home">
+            <span class="brand__logo" aria-hidden="true"><img src="/assets/logo-home-final.png" alt="AMEF logo" /></span>
+          </a>
+          <div class="footer-social">
+            <p>Connect with AMEF</p>
+            <div class="social-icons" aria-label="AMEF social media">
+              <span class="social-icon social-icon--active" role="img" aria-label="Facebook link pending" title="Facebook profile link pending"><svg aria-hidden="true"><use href="#icon-facebook"></use></svg></span>
+              <span class="social-icon social-icon--active" role="img" aria-label="Instagram link pending" title="Instagram profile link pending"><svg aria-hidden="true"><use href="#icon-instagram"></use></svg></span>
+              <span class="social-icon social-icon--active" role="img" aria-label="YouTube link pending" title="YouTube channel link pending"><svg aria-hidden="true"><use href="#icon-youtube"></use></svg></span>
+              <span class="social-icon social-icon--active" role="img" aria-label="TikTok link pending" title="TikTok profile link pending"><svg aria-hidden="true"><use href="#icon-tiktok"></use></svg></span>
+              <a class="social-icon social-icon--active" href="https://wa.me/256775749226" target="_blank" rel="noopener noreferrer" aria-label="Contact AMHS on WhatsApp" title="WhatsApp"><svg aria-hidden="true"><use href="#icon-whatsapp"></use></svg></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer__links"><h3>Important Links</h3><a href="/about/">Our story</a><a href="/our-work/">What we do</a><a href="/get-involved/">Get involved</a><a href="/contact/">Contact</a></div>
+        <div class="footer__links"><h3>Projects</h3><a href="/amhs/">Asaba Memorial High School</a><a href="/sifa-skilling-centre/">Sifa Skilling Centre</a><a href="/our-work/">Health & awareness</a><a href="/our-work/">Livelihoods</a></div>
         <div class="footer__action"><p>Help opportunity travel further.</p><a class="button button--gold" href="/get-involved/">Support our work</a></div>
       </div>
       <div class="container footer__bottom"><p>© <span data-current-year></span> Asaba Memorial Education Foundation.</p><p>Education · Empowerment · Community</p></div>
@@ -254,5 +270,114 @@ document.querySelectorAll("[data-contact-form]").forEach((form) => {
     status.textContent = `Thank you, ${name}. This preview has captured your interest locally; connect the form to the client’s confirmed inbox before launch.`;
     status.classList.add("is-visible");
     setTimeout(() => { button.disabled = false; button.textContent = "Send another message"; }, 1600);
+  });
+});
+
+document.querySelectorAll("[data-donation-form]").forEach((form) => {
+  const customAmount = form.elements.customAmount;
+  const otherAmount = form.querySelector('input[name="amount"][value="other"]');
+  const error = form.querySelector("[data-donation-error]");
+  const status = form.querySelector("[data-donation-status]");
+  const commentToggle = form.querySelector("[data-donation-comment-toggle]");
+  const commentField = form.querySelector(".donation-comment");
+
+  customAmount?.addEventListener("focus", () => { otherAmount.checked = true; });
+  customAmount?.addEventListener("input", () => {
+    otherAmount.checked = true;
+    customAmount.removeAttribute("aria-invalid");
+    error.textContent = "";
+  });
+
+  form.querySelectorAll('input[name="amount"]').forEach((input) => {
+    input.addEventListener("change", () => {
+      customAmount.removeAttribute("aria-invalid");
+      error.textContent = "";
+      status.classList.remove("is-visible");
+    });
+  });
+
+  commentToggle?.addEventListener("change", () => {
+    commentField.hidden = !commentToggle.checked;
+    if (commentToggle.checked) commentField.querySelector("textarea")?.focus();
+  });
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const selected = form.querySelector('input[name="amount"]:checked');
+    const amount = selected?.value === "other" ? customAmount.value.trim() : selected?.value;
+
+    if (!selected || !amount || Number(amount) <= 0) {
+      error.textContent = "Please select or enter an amount.";
+      if (selected?.value === "other") {
+        customAmount.setAttribute("aria-invalid", "true");
+        customAmount.focus();
+      } else {
+        form.querySelector('input[name="amount"]')?.focus();
+      }
+      return;
+    }
+
+    error.textContent = "";
+    status.innerHTML = 'Thank you for choosing to give. Online payments are not connected yet. <a href="/contact/?interest=General">Contact AMEF to complete your donation</a>.';
+    status.classList.add("is-visible");
+  });
+});
+
+document.querySelectorAll("[data-sponsorship-form]").forEach((form) => {
+  const customAmount = form.elements.sponsorCustomAmount;
+  const otherAmount = form.querySelector('input[name="sponsorAmount"][value="other"]');
+  const error = form.querySelector("[data-sponsorship-error]");
+  const status = form.querySelector("[data-sponsorship-status]");
+  const commentToggle = form.querySelector("[data-sponsorship-comment-toggle]");
+  const commentField = form.querySelector(".sponsor-now__comment");
+
+  document.querySelectorAll("[data-sponsor-choice]").forEach((choice) => {
+    choice.addEventListener("click", () => {
+      const frequency = form.querySelector(`input[name="sponsorFrequency"][value="${choice.dataset.sponsorChoice}"]`);
+      if (frequency) frequency.checked = true;
+      form.closest(".sponsor-now")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      window.setTimeout(() => form.querySelector('input[name="sponsorAmount"]')?.focus({ preventScroll: true }), 450);
+    });
+  });
+
+  customAmount?.addEventListener("focus", () => { otherAmount.checked = true; });
+  customAmount?.addEventListener("input", () => {
+    otherAmount.checked = true;
+    customAmount.removeAttribute("aria-invalid");
+    error.textContent = "";
+  });
+
+  form.querySelectorAll('input[name="sponsorAmount"]').forEach((input) => {
+    input.addEventListener("change", () => {
+      customAmount.removeAttribute("aria-invalid");
+      error.textContent = "";
+      status.classList.remove("is-visible");
+    });
+  });
+
+  commentToggle?.addEventListener("change", () => {
+    commentField.hidden = !commentToggle.checked;
+    if (commentToggle.checked) commentField.querySelector("textarea")?.focus();
+  });
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const selected = form.querySelector('input[name="sponsorAmount"]:checked');
+    const amount = selected?.value === "other" ? customAmount.value.trim() : selected?.value;
+
+    if (!selected || !amount || Number(amount) <= 0) {
+      error.textContent = "Please select or enter an amount.";
+      if (selected?.value === "other") {
+        customAmount.setAttribute("aria-invalid", "true");
+        customAmount.focus();
+      } else {
+        form.querySelector('input[name="sponsorAmount"]')?.focus();
+      }
+      return;
+    }
+
+    error.textContent = "";
+    status.innerHTML = 'Thank you. AMEF will confirm the sponsorship arrangement before any contribution is made. <a href="/contact/?interest=Sponsor+a+Child">Continue to the contact form</a>.';
+    status.classList.add("is-visible");
   });
 });

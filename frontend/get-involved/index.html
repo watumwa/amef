@@ -23,13 +23,88 @@
         </div>
       </section>
 
-      <section class="inner-section" id="donate">
-        <div class="container page-heading reveal"><p class="eyebrow"><span></span> Ways to contribute</p><h2>Choose the part of the story you want to strengthen.</h2><p>AMEF is building its formal support channels. For now, select an area and begin directly with the Foundation team.</p></div>
-        <div class="support-grid container">
-          <a class="support-card reveal" href="/contact/?interest=Education"><span class="support-card__icon"><svg class="icon" aria-hidden="true"><use href="#icon-book"></use></svg></span><span class="support-card__number">01</span><h3>Education access</h3><p>Help strengthen learning at Asaba Memorial High School and keep secondary education close to home.</p><strong>Support education <svg class="icon" aria-hidden="true"><use href="#icon-arrow"></use></svg></strong></a>
-          <a class="support-card reveal" href="/contact/?interest=Skills"><span class="support-card__icon"><svg class="icon" aria-hidden="true"><use href="#icon-spark"></use></svg></span><span class="support-card__number">02</span><h3>Skills training</h3><p>Back practical and entrepreneurial learning for youth and women through Sifa Skilling Centre.</p><strong>Support skilling <svg class="icon" aria-hidden="true"><use href="#icon-arrow"></use></svg></strong></a>
-          <a class="support-card reveal" href="/contact/?interest=Health+and+WASH"><span class="support-card__icon"><svg class="icon" aria-hidden="true"><use href="#icon-droplet"></use></svg></span><span class="support-card__number">03</span><h3>Community wellbeing</h3><p>Start a conversation about health initiatives, HIV/AIDS awareness, clean water and sanitation.</p><strong>Support wellbeing <svg class="icon" aria-hidden="true"><use href="#icon-arrow"></use></svg></strong></a>
-          <a class="support-card support-card--maroon reveal" href="/contact/?interest=Partnership"><span class="support-card__icon"><svg class="icon" aria-hidden="true"><use href="#icon-users"></use></svg></span><span class="support-card__number">04</span><h3>Strategic partnership</h3><p>Bring expertise, networks, resources or long-term collaboration to AMEF’s mission.</p><strong>Become a partner <svg class="icon" aria-hidden="true"><use href="#icon-arrow"></use></svg></strong></a>
+      <section class="inner-section donation-section" id="donate" aria-labelledby="donation-title">
+        <div class="container donation-experience">
+          <div class="donation-details reveal">
+            <div class="donation-callout">
+              <span class="donation-callout__icon"><svg class="icon" aria-hidden="true"><use href="#icon-heart"></use></svg></span>
+              <div>
+                <p class="eyebrow eyebrow--gold"><span></span> Make a general donation</p>
+                <h2 id="donation-title">Help opportunity travel further.</h2>
+                <p>Your donation can strengthen education, practical skills and community wellbeing through the Asaba Memorial Education Foundation.</p>
+              </div>
+            </div>
+
+            <h3 class="donation-options-title">Donation options</h3>
+            <div class="donation-option-list">
+              <article class="donation-option">
+                <span class="donation-option__icon"><svg class="icon" aria-hidden="true"><use href="#icon-heart"></use></svg></span>
+                <div>
+                  <h4>International donors</h4>
+                  <p>Choose an amount in the donation form. The AMEF team will then confirm the secure payment channel with you.</p>
+                </div>
+              </article>
+
+              <article class="donation-option donation-option--bank">
+                <span class="donation-option__icon"><svg class="icon" aria-hidden="true"><use href="#icon-school"></use></svg></span>
+                <div>
+                  <h4>Uganda: direct bank transfer</h4>
+                  <div class="bank-transfer-note">
+                    <svg class="icon" aria-hidden="true"><use href="#icon-shield"></use></svg>
+                    <div><strong>Verify details before transferring</strong><p>Official bank account details have not yet been published on this website. Contact AMEF directly for confirmed instructions.</p></div>
+                  </div>
+                  <a class="text-link" href="/contact/?interest=General">Request bank details <svg class="icon" aria-hidden="true"><use href="#icon-arrow"></use></svg></a>
+                </div>
+              </article>
+            </div>
+
+            <div class="donation-impact-note">
+              <span><svg class="icon" aria-hidden="true"><use href="#icon-users"></use></svg></span>
+              <p><strong>Every contribution counts.</strong> Your support helps AMEF bring learning, skills and opportunity closer to the communities it serves.</p>
+            </div>
+          </div>
+
+          <div class="donation-panel reveal">
+            <header class="donation-panel__intro">
+              <p class="eyebrow"><span></span> Support AMEF</p>
+              <h2>Donate now</h2>
+              <p>Choose how you would like to support our work.</p>
+            </header>
+
+            <form class="donation-selector" data-donation-form novalidate>
+              <div class="donation-selector__topbar">
+                <strong>Choose amount</strong>
+                <span class="donation-steps" aria-label="Step 1 of 3"><svg class="icon" aria-hidden="true"><use href="#icon-shield"></use></svg><i class="is-active"></i><i></i><i></i></span>
+              </div>
+
+              <div class="donation-selector__body">
+                <fieldset class="donation-frequency">
+                  <legend class="sr-only">Donation frequency</legend>
+                  <label><input type="radio" name="frequency" value="One-time" checked /><span>One-time</span></label>
+                  <label><input type="radio" name="frequency" value="Monthly" /><span>Monthly</span></label>
+                  <label><input type="radio" name="frequency" value="Annually" /><span>Annually</span></label>
+                </fieldset>
+
+                <fieldset class="donation-amounts">
+                  <legend class="sr-only">Donation amount in US dollars</legend>
+                  <label><input type="radio" name="amount" value="20" /><span>USD 20</span></label>
+                  <label><input type="radio" name="amount" value="50" /><span>USD 50</span></label>
+                  <label><input type="radio" name="amount" value="100" /><span>USD 100</span></label>
+                  <label class="donation-amounts__other"><input type="radio" name="amount" value="other" /><span class="sr-only">Other amount</span><b>USD</b><input type="number" name="customAmount" min="1" step="1" inputmode="numeric" placeholder="Other amount" aria-label="Other amount in US dollars" /></label>
+                </fieldset>
+
+                <p class="donation-selector__error" data-donation-error role="alert"></p>
+
+                <label class="donation-comment-toggle"><input type="checkbox" data-donation-comment-toggle /><span>Write us a comment</span></label>
+                <label class="donation-comment" hidden><span class="sr-only">Donation comment</span><textarea name="comment" rows="3" placeholder="Share a note with the AMEF team"></textarea></label>
+
+                <button class="button button--maroon donation-selector__submit" type="submit">Next <svg class="icon" aria-hidden="true"><use href="#icon-arrow"></use></svg></button>
+                <p class="donation-selector__notice" data-donation-status role="status" aria-live="polite"></p>
+              </div>
+
+              <footer class="donation-selector__footer"><svg class="icon" aria-hidden="true"><use href="#icon-shield"></use></svg> Secure payment connection pending</footer>
+            </form>
+          </div>
         </div>
       </section>
 
