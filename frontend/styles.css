@@ -2501,33 +2501,6 @@ button {
   padding-block: 76px 84px;
 }
 
-.breadcrumbs {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  margin-bottom: 42px;
-  color: rgba(4, 27, 60, 0.6);
-  font-size: 0.71rem;
-  font-weight: 800;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-}
-
-.breadcrumbs a:hover {
-  color: var(--maroon);
-}
-
-.breadcrumbs--light {
-  color: rgba(255, 255, 255, 0.58);
-}
-
-.page-hero--about .breadcrumbs,
-.page-hero--work .breadcrumbs,
-.page-hero--involved .breadcrumbs,
-.page-hero--contact .breadcrumbs {
-  color: rgba(255, 255, 255, 0.62);
-}
-
 .page-hero h1 {
   max-width: 1000px;
   margin: 20px 0 0;
@@ -3335,10 +3308,6 @@ button {
   flex-direction: column;
   justify-content: center;
   padding-block: 55px 80px;
-}
-
-.school-hero__inner .breadcrumbs {
-  margin-bottom: 36px;
 }
 
 .school-hero__badge {
@@ -5027,8 +4996,6 @@ button {
 }
 
 .career-hero__inner { position: relative; z-index: 1; padding-block: 48px 66px; }
-.career-hero .breadcrumbs { color: rgba(4, 27, 60, 0.58); }
-
 .career-hero__grid {
   display: grid;
   grid-template-columns: minmax(0, 1.3fr) minmax(330px, 0.7fr);
@@ -5542,10 +5509,6 @@ button {
     padding-block: 62px 72px;
   }
 
-  .breadcrumbs {
-    margin-bottom: 32px;
-  }
-
   .inner-section {
     padding-block: 86px;
   }
@@ -5707,8 +5670,6 @@ button {
   padding-block: 60px 76px;
 }
 
-.contact-hero .breadcrumbs { margin-bottom: 40px; }
-
 .contact-hero h1 {
   max-width: 900px;
   margin: 24px 0 0;
@@ -5857,7 +5818,6 @@ button {
   .contact-hero,
   .contact-hero__inner { min-height: 520px; }
   .contact-hero__inner { padding-block: 44px 58px; }
-  .contact-hero .breadcrumbs { margin-bottom: 32px; }
   .contact-hero h1 { font-size: clamp(3.25rem, 15vw, 5rem); }
   .contact-hero__pattern { right: -190px; width: 360px; height: 360px; }
   .contact-section-heading h2,
