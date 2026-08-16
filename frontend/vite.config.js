@@ -14,6 +14,7 @@ export default defineConfig({
         sponsor: resolve(import.meta.dirname, "sponsor-a-child/index.html"),
         careers: resolve(import.meta.dirname, "careers/index.html"),
         contact: resolve(import.meta.dirname, "contact/index.html"),
+        search: resolve(import.meta.dirname, "search/index.html"),
       },
     },
   },

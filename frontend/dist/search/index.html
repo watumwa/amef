@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Search the Asaba Memorial Education Foundation website." />
+    <meta name="theme-color" content="#041b3c" />
+    <link rel="icon" href="/assets/favico-2yw-D2bL.png" type="image/png" />
+    <title>Search — AMEF</title>
+    <script type="module" crossorigin src="/assets/search-BjXNFruK.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/styles-QyZ-KO1Q.js">
+    <link rel="modulepreload" crossorigin href="/assets/site-shell-Xd-ZIUs9.js">
+    <link rel="stylesheet" crossorigin href="/assets/styles-Y8MzMYgG.css">
+  </head>
+  <body data-page="search">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <div data-site-header></div>
+
+    <main id="main-content">
+      <section class="search-hero" aria-labelledby="search-title">
+        <div class="container search-hero__inner">
+          <p class="eyebrow"><span></span> Site search</p>
+          <h1 id="search-title">What are you looking for?</h1>
+          <p>Search AMEF’s programmes, history, opportunities, and ways to get involved.</p>
+          <form class="search-page__form" action="/search/" method="get" data-search-form>
+            <label class="sr-only" for="site-search-query">Search the AMEF website</label>
+            <svg class="icon" aria-hidden="true"><use href="#icon-search"></use></svg>
+            <input id="site-search-query" type="search" name="q" placeholder="Search education, health, skills…" autocomplete="off" maxlength="100" data-search-input />
+            <button class="button button--maroon" type="submit">Search</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="search-results-section" aria-labelledby="search-results-title">
+        <div class="container">
+          <div class="search-results__heading">
+            <p class="eyebrow"><span></span> Results</p>
+            <h2 id="search-results-title" data-search-heading>Search the site</h2>
+            <p role="status" aria-live="polite" data-search-status>Enter a word or phrase to begin.</p>
+          </div>
+          <div class="search-results" data-search-results></div>
+          <noscript><p class="search-empty">JavaScript is required to search this website. You can still browse using the main navigation.</p></noscript>
+        </div>
+      </section>
+    </main>
+
+    <div data-site-footer></div>
+  </body>
+</html>

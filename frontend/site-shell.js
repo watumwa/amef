@@ -159,7 +159,7 @@ if (headerTarget) {
                 <svg aria-hidden="true"><use href="#icon-tiktok"></use></svg>
               </a>
             </div>
-            <form class="topbar__search" action="/search" method="get">
+            <form class="topbar__search" action="/search/" method="get">
               <label for="topbar-search" class="sr-only">Search</label>
               <input id="topbar-search" type="search" name="q" placeholder="Search..." />
               <button type="submit" aria-label="Search">
