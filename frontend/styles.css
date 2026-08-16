@@ -778,6 +778,57 @@ button {
 .donate-points li::before { width: 7px; height: 7px; content: ""; border-radius: 50%; background: var(--gold-bright); }
 .donate__intro .donate-note { max-width: 520px; margin-top: 34px; padding-top: 22px; border-top: 1px solid rgba(255, 255, 255, 0.18); color: rgba(255, 255, 255, 0.58); font-size: 0.82rem; }
 
+.partner-logos-section {
+  padding-block: 38px;
+  background: #f3f3f3;
+}
+
+.partner-logos-section h2 {
+  margin: 0;
+  color: var(--navy);
+  font-size: 0.88rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.partner-logo-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 230px));
+  justify-content: space-between;
+  gap: 32px clamp(36px, 8vw, 120px);
+  margin: 22px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.partner-logo-list li {
+  display: grid;
+  aspect-ratio: 230 / 133;
+  place-items: center;
+  overflow: hidden;
+  background: var(--white);
+  box-shadow: 0 0 0 1px rgba(4, 27, 60, 0.08);
+}
+
+.partner-logo-list img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@media (max-width: 620px) {
+  .partner-logos-section {
+    padding-block: 34px;
+  }
+
+  .partner-logo-list {
+    justify-content: center;
+    gap: 20px;
+  }
+}
+
 @media (max-width: 1050px) {
   .why-layout { grid-template-columns: 1fr 1fr; gap: 60px; }
   .who-heading { grid-template-columns: 1fr; }
@@ -2265,12 +2316,44 @@ button {
   transform: translateX(3px);
 }
 
-.footer__action > p {
-  margin: 0 0 20px;
+.footer__location address {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  margin: 0;
   color: var(--white);
-  font-family: var(--serif);
-  font-size: 1.55rem;
-  line-height: 1.25;
+  font-size: 0.82rem;
+  font-style: normal;
+  line-height: 1.65;
+}
+
+.footer__location address .icon {
+  margin-top: 4px;
+  color: var(--gold-bright);
+  font-size: 1.1rem;
+}
+
+.footer__location-contact {
+  display: grid;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.footer__location-contact a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.82rem;
+  transition: color 160ms ease;
+}
+
+.footer__location-contact a:hover {
+  color: var(--white);
+}
+
+.footer__location-contact .icon {
+  color: var(--gold-bright);
 }
 
 .footer__bottom {
@@ -6076,17 +6159,10 @@ button {
     height: 42px;
   }
 
-  .footer__action {
+  .footer__location {
     grid-column: 1 / -1;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     padding-top: 28px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  .footer__action > p {
-    margin: 0;
   }
 }
 
@@ -6341,15 +6417,10 @@ button {
     gap: 50px;
   }
 
-  .footer__action {
+  .footer__location {
     grid-column: auto;
-    display: block;
     padding: 0;
     border: 0;
-  }
-
-  .footer__action > p {
-    margin-bottom: 20px;
   }
 }
 
@@ -6643,7 +6714,7 @@ button {
     gap: 40px;
   }
 
-  .footer__action {
+  .footer__location {
     padding-top: 30px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
   }

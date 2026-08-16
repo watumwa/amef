@@ -139,9 +139,9 @@ if (headerTarget) {
               <svg class="icon" aria-hidden="true"><use href="#icon-mail"></use></svg>
               <span>info@amefuganda.org</span>
             </a>
-            <a class="topbar__link" href="https://maps.google.com" target="_blank" rel="noreferrer">
+            <a class="topbar__link" href="https://www.google.com/maps/search/?api=1&amp;query=1.8513450%2C31.8538220" target="_blank" rel="noopener noreferrer">
               <svg class="icon" aria-hidden="true"><use href="#icon-location"></use></svg>
-              <span>Masindi, Uganda</span>
+              <span>Kitanyata 1 Village, Masindi</span>
             </a>
           </div>
           <div class="topbar__right">
@@ -174,7 +174,7 @@ if (headerTarget) {
           ${brand()}
           <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-toggle><span class="sr-only">Open menu</span><svg class="icon menu-toggle__open" aria-hidden="true"><use href="#icon-menu"></use></svg><svg class="icon menu-toggle__close" aria-hidden="true"><use href="#icon-close"></use></svg></button>
           <div class="nav-links">${desktopLinks}</div>
-          <a class="button button--maroon navbar__cta" href="/get-involved/#donate">Donate <svg class="icon" aria-hidden="true"><use href="#icon-heart"></use></svg></a>
+          <a class="button button--maroon navbar__cta" href="/get-involved/#donate">Donate</a>
         </div>
         <div class="mobile-menu" id="mobile-menu" data-mobile-menu><div class="container mobile-menu__inner">${mobileLinks}<a class="button button--gold" href="/get-involved/#donate">Donate</a></div></div>
       </nav>
@@ -203,7 +203,7 @@ if (footerTarget) {
         </div>
         <div class="footer__links"><h3>Important Links</h3><a href="/about/">Our story</a><a href="/our-work/">What we do</a><a href="/get-involved/">Get involved</a><a href="/contact/">Contact</a></div>
         <div class="footer__links"><h3>Projects</h3><a href="/amhs/">Asaba Memorial High School</a><a href="/sifa-skilling-centre/">Sifa Skilling Centre</a><a href="/our-work/">Health & awareness</a><a href="/our-work/">Livelihoods</a></div>
-        <div class="footer__action"><p>Help opportunity travel further.</p><a class="button button--gold" href="/get-involved/">Support our work</a></div>
+        <div class="footer__location"><h3>Physical Location</h3><address><svg class="icon" aria-hidden="true"><use href="#icon-location"></use></svg><span>Kitanyata 1 Village, Masindi</span></address><div class="footer__location-contact"><a href="tel:+256775749226"><svg class="icon" aria-hidden="true"><use href="#icon-phone"></use></svg><span>+256 775 749226</span></a><a href="mailto:info@amefuganda.org"><svg class="icon" aria-hidden="true"><use href="#icon-mail"></use></svg><span>info@amefuganda.org</span></a></div></div>
       </div>
       <div class="container footer__bottom"><p>© <span data-current-year></span> Asaba Memorial Education Foundation.</p><p>Education · Empowerment · Community</p></div>
     </footer>`;
