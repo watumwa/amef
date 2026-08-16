@@ -1,3 +1,6 @@
+import mainLogoUrl from "./assets/main-logo.png";
+import footerLogoUrl from "./assets/logo-home-final.png";
+
 const page = document.body.dataset.page || "";
 
 const navItems = [
@@ -70,12 +73,12 @@ const iconSprite = `
 const brand = (footer = false) => footer ? `
   <a class="brand brand--footer" href="/" aria-label="AMEF home">
     <span class="brand__mark" aria-hidden="true">
-      <img src="/assets/main-logo.png" alt="AMEF logo" />
+      <img src="${mainLogoUrl}" alt="" />
     </span>
     <span class="brand__copy"><strong>AMEF</strong><small>Asaba Memorial Education Foundation</small></span>
   </a>` : `
   <a class="brand brand--navbar" href="/" aria-label="AMEF home">
-    <img class="brand__logo" src="/assets/main-logo.png" alt="Asaba Memorial Education Foundation" />
+    <img class="brand__logo" src="${mainLogoUrl}" alt="Asaba Memorial Education Foundation" />
   </a>`;
 
 const isNavItemActive = (item) => (item.activePages || [item.id]).includes(page);
@@ -185,7 +188,7 @@ if (footerTarget) {
       <div class="container footer__grid">
         <div class="footer__brand">
           <a class="brand brand--footer" href="/" aria-label="AMEF home">
-            <span class="brand__logo" aria-hidden="true"><img src="/assets/logo-home-final.png" alt="AMEF logo" /></span>
+            <span class="brand__logo" aria-hidden="true"><img src="${footerLogoUrl}" alt="" /></span>
           </a>
           <div class="footer-social">
             <p>Connect with AMEF</p>
