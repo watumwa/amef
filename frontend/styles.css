@@ -3565,7 +3565,7 @@ button {
   inset: 0;
   background:
     linear-gradient(90deg, rgba(4, 27, 60, 0.98), rgba(4, 27, 60, 0.77) 48%, rgba(4, 27, 60, 0.15)),
-    url("/assets/amef-hero.webp") center / cover;
+    url("/assets/starter-images/IMG_1325.JPG.jpeg") center / cover;
 }
 
 .school-hero__inner {
@@ -5828,7 +5828,7 @@ button {
   .school-hero__image {
     background:
       linear-gradient(90deg, rgba(4, 27, 60, 0.96), rgba(4, 27, 60, 0.63)),
-      url("/assets/amef-hero.webp") 62% center / cover;
+      url("/assets/starter-images/IMG_1325.JPG.jpeg") 62% center / cover;
   }
 
   .school-factbar article {
@@ -5969,7 +5969,7 @@ button {
 
 .contact-methods {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   margin-top: 62px;
   border-top: 1px solid var(--line);
   border-left: 1px solid var(--line);

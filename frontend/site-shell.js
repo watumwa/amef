@@ -119,7 +119,7 @@ const socialLinks = `
       <span class="social-icon social-icon--pending" role="img" aria-label="Instagram link pending" title="Instagram profile link pending"><svg aria-hidden="true"><use href="#icon-instagram"></use></svg></span>
       <span class="social-icon social-icon--pending" role="img" aria-label="YouTube link pending" title="YouTube channel link pending"><svg aria-hidden="true"><use href="#icon-youtube"></use></svg></span>
       <span class="social-icon social-icon--pending" role="img" aria-label="TikTok link pending" title="TikTok profile link pending"><svg aria-hidden="true"><use href="#icon-tiktok"></use></svg></span>
-      <a class="social-icon social-icon--active" href="https://wa.me/256775749226" target="_blank" rel="noopener noreferrer" aria-label="Contact AMHS on WhatsApp" title="WhatsApp"><svg aria-hidden="true"><use href="#icon-whatsapp"></use></svg></a>
+      <a class="social-icon social-icon--active" href="https://wa.me/256775749226" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp AMEF at +256 775 749226" title="WhatsApp"><svg aria-hidden="true"><use href="#icon-whatsapp"></use></svg></a>
     </div>
     <small>Official profile links pending · WhatsApp is active</small>
   </div>`;
@@ -131,9 +131,9 @@ if (headerTarget) {
       <div class="topbar">
         <div class="container topbar__inner">
           <div class="topbar__left">
-            <a class="topbar__link" href="tel:+256775749226">
+            <a class="topbar__link" href="tel:+256766610442">
               <svg class="icon" aria-hidden="true"><use href="#icon-phone"></use></svg>
-              <span>+256 775 749226</span>
+              <span>+256 766 610442</span>
             </a>
             <a class="topbar__link" href="mailto:info@amefuganda.org">
               <svg class="icon" aria-hidden="true"><use href="#icon-mail"></use></svg>
@@ -141,23 +141,23 @@ if (headerTarget) {
             </a>
             <a class="topbar__link" href="https://www.google.com/maps/search/?api=1&amp;query=1.8513450%2C31.8538220" target="_blank" rel="noopener noreferrer">
               <svg class="icon" aria-hidden="true"><use href="#icon-location"></use></svg>
-              <span>Kitanyata 1 Village, Masindi</span>
+              <span>Kitanyata 1 Village, Kiruli Sub-county, Masindi, Uganda</span>
             </a>
           </div>
           <div class="topbar__right">
             <div class="topbar__social" aria-label="AMEF social media">
-              <a class="social-icon social-icon--pending" href="#" aria-label="Facebook profile link pending" title="Facebook">
+              <span class="social-icon social-icon--pending" role="img" aria-label="Facebook link unavailable" title="Facebook link unavailable">
                 <svg aria-hidden="true"><use href="#icon-facebook"></use></svg>
-              </a>
-              <a class="social-icon social-icon--pending" href="#" aria-label="Instagram profile link pending" title="Instagram">
+              </span>
+              <span class="social-icon social-icon--pending" role="img" aria-label="Instagram link unavailable" title="Instagram link unavailable">
                 <svg aria-hidden="true"><use href="#icon-instagram"></use></svg>
-              </a>
-              <a class="social-icon social-icon--pending" href="#" aria-label="YouTube channel link pending" title="YouTube">
+              </span>
+              <span class="social-icon social-icon--pending" role="img" aria-label="YouTube link unavailable" title="YouTube link unavailable">
                 <svg aria-hidden="true"><use href="#icon-youtube"></use></svg>
-              </a>
-              <a class="social-icon social-icon--pending" href="#" aria-label="TikTok profile link pending" title="TikTok">
+              </span>
+              <span class="social-icon social-icon--pending" role="img" aria-label="TikTok link unavailable" title="TikTok link unavailable">
                 <svg aria-hidden="true"><use href="#icon-tiktok"></use></svg>
-              </a>
+              </span>
             </div>
             <form class="topbar__search" action="/search/" method="get">
               <label for="topbar-search" class="sr-only">Search</label>
@@ -197,13 +197,13 @@ if (footerTarget) {
               <span class="social-icon social-icon--active" role="img" aria-label="Instagram link pending" title="Instagram profile link pending"><svg aria-hidden="true"><use href="#icon-instagram"></use></svg></span>
               <span class="social-icon social-icon--active" role="img" aria-label="YouTube link pending" title="YouTube channel link pending"><svg aria-hidden="true"><use href="#icon-youtube"></use></svg></span>
               <span class="social-icon social-icon--active" role="img" aria-label="TikTok link pending" title="TikTok profile link pending"><svg aria-hidden="true"><use href="#icon-tiktok"></use></svg></span>
-              <a class="social-icon social-icon--active" href="https://wa.me/256775749226" target="_blank" rel="noopener noreferrer" aria-label="Contact AMHS on WhatsApp" title="WhatsApp"><svg aria-hidden="true"><use href="#icon-whatsapp"></use></svg></a>
+              <a class="social-icon social-icon--active" href="https://wa.me/256775749226" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp AMEF at +256 775 749226" title="WhatsApp"><svg aria-hidden="true"><use href="#icon-whatsapp"></use></svg></a>
             </div>
           </div>
         </div>
         <div class="footer__links"><h3>Important Links</h3><a href="/about/">Our story</a><a href="/our-work/">What we do</a><a href="/get-involved/">Get involved</a><a href="/contact/">Contact</a></div>
-        <div class="footer__links"><h3>Projects</h3><a href="/amhs/">Asaba Memorial High School</a><a href="/sifa-skilling-centre/">Sifa Skilling Centre</a><a href="/our-work/">Health & awareness</a><a href="/our-work/">Livelihoods</a></div>
-        <div class="footer__location"><h3>Physical Location</h3><address><svg class="icon" aria-hidden="true"><use href="#icon-location"></use></svg><span>Kitanyata 1 Village, Masindi</span></address><div class="footer__location-contact"><a href="tel:+256775749226"><svg class="icon" aria-hidden="true"><use href="#icon-phone"></use></svg><span>+256 775 749226</span></a><a href="mailto:info@amefuganda.org"><svg class="icon" aria-hidden="true"><use href="#icon-mail"></use></svg><span>info@amefuganda.org</span></a></div></div>
+        <div class="footer__links"><h3>Projects</h3><a href="/amhs/">Asaba Memorial High School</a><a href="/sifa-skilling-centre/">Safia Skilling Hub (SSH)</a><a href="/our-work/">Health & awareness</a><a href="/our-work/">Livelihoods</a></div>
+        <div class="footer__location"><h3>Physical Location</h3><address><svg class="icon" aria-hidden="true"><use href="#icon-location"></use></svg><span>Kitanyata 1 Village, Kiruli Sub-county, Masindi, Uganda</span></address><div class="footer__location-contact"><a href="tel:+256766610442"><svg class="icon" aria-hidden="true"><use href="#icon-phone"></use></svg><span>Call us: +256 766 610442</span></a><a href="https://wa.me/256775749226" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#icon-whatsapp"></use></svg><span>WhatsApp us: +256 775 749226</span></a><a href="mailto:info@amefuganda.org"><svg class="icon" aria-hidden="true"><use href="#icon-mail"></use></svg><span>info@amefuganda.org</span></a></div></div>
       </div>
       <div class="container footer__bottom"><p>© <span data-current-year></span> Asaba Memorial Education Foundation.</p><p>Education · Empowerment · Community</p></div>
     </footer>`;
