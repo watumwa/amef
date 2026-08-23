@@ -799,6 +799,10 @@ button {
   margin-top: 65px;
 }
 
+.success-stories__featured--single {
+  grid-template-columns: 1fr;
+}
+
 .success-story {
   overflow: hidden;
   border: 1px solid rgba(4, 27, 60, 0.12);
