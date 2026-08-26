@@ -12,7 +12,7 @@ const navItems = [
       ["/about/#who-we-are", "Who we are"],
       ["/about/#our-history", "Our History"],
       ["/about/#our-team", "Our Team"],
-      ["/get-involved/?interest=Partnership", "Patners"],
+      ["/get-involved/?interest=Partnership", "Partners"],
       ["/#story", "Success Stories"],
     ],
   },
