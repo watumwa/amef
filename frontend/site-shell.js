@@ -274,6 +274,40 @@ const revealObserver = new IntersectionObserver((entries) => {
 document.querySelectorAll(".reveal").forEach((item) => revealObserver.observe(item));
 document.querySelectorAll("[data-current-year]").forEach((item) => { item.textContent = new Date().getFullYear(); });
 
+const teamDialog = document.querySelector("[data-team-dialog]");
+let teamDialogOpener = null;
+
+document.querySelectorAll("[data-team-open]").forEach((opener) => {
+  opener.addEventListener("click", () => {
+    if (!teamDialog) return;
+
+    const biography = document.getElementById(opener.dataset.teamOpen);
+    const name = teamDialog.querySelector("[data-team-dialog-name]");
+    const role = teamDialog.querySelector("[data-team-dialog-role]");
+    const image = teamDialog.querySelector("[data-team-dialog-image]");
+    const content = teamDialog.querySelector("[data-team-dialog-biography]");
+    if (!biography || !name || !role || !image || !content) return;
+
+    name.textContent = opener.dataset.teamName;
+    role.textContent = opener.dataset.teamRole;
+    image.src = opener.querySelector("img")?.currentSrc || opener.querySelector("img")?.src || "";
+    image.alt = `${opener.dataset.teamName}, ${opener.dataset.teamRole} at AMEF`;
+    content.replaceChildren(biography.content.cloneNode(true));
+    teamDialogOpener = opener;
+    teamDialog.showModal();
+    document.body.classList.add("dialog-open");
+  });
+});
+
+teamDialog?.querySelector("[data-team-dialog-close]")?.addEventListener("click", () => teamDialog.close());
+teamDialog?.addEventListener("click", (event) => {
+  if (event.target === teamDialog) teamDialog.close();
+});
+teamDialog?.addEventListener("close", () => {
+  document.body.classList.remove("dialog-open");
+  teamDialogOpener?.focus();
+});
+
 document.querySelectorAll("[data-contact-form]").forEach((form) => {
   form.addEventListener("submit", (event) => {
     event.preventDefault();
