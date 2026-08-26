@@ -14,6 +14,7 @@ A responsive multi-page website for the Asaba Memorial Education Foundation, bui
 - `/sponsor-a-child/` — Child sponsorship information and interest pathway
 - `/volunteer/` — Volunteer information and application pathway
 - `/careers/` — Confirmed vacancies and future career guidance
+- `/policies/` — View and download AMEF policy documents
 - `/contact/` — Contact and inquiry form
 
 ## Run locally

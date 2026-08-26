@@ -53,6 +53,8 @@ const iconSprite = `
     <symbol id="icon-seedling" viewBox="0 0 24 24"><path d="M12 22V10M7 15c-3 0-5-2-5-6 4 0 7 2 7 5M17 12c3 0 5-2 5-6-4 0-7 2-7 5"/></symbol>
     <symbol id="icon-school" viewBox="0 0 24 24"><path d="m3 10 9-6 9 6M5 9v10M19 9v10M3 20h18M9 20v-6h6v6"/></symbol>
     <symbol id="icon-briefcase" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18M10 12v2h4v-2"/></symbol>
+    <symbol id="icon-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M8 13h8M8 17h6"/></symbol>
+    <symbol id="icon-download" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></symbol>
     <symbol id="icon-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
     <symbol id="icon-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
     <symbol id="icon-chevron" viewBox="0 0 24 24"><path d="m7 10 5 5 5-5"/></symbol>
@@ -66,6 +68,7 @@ const iconSprite = `
     <symbol id="icon-instagram" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.7" r=".8" fill="currentColor" stroke="none"/></symbol>
     <symbol id="icon-youtube" viewBox="0 0 24 24"><path d="M22 12s0-4-1-5c-1-1-3-1-9-1s-8 0-9 1-1 5-1 5 0 4 1 5 3 1 9 1 8 0 9-1 1-5 1-5Z"/><path d="m10 9 5 3-5 3V9Z"/></symbol>
     <symbol id="icon-x" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231Zm-1.161 17.52h1.833L7.084 4.126H5.117Z"/></symbol>
+    <symbol id="icon-linkedin" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M6.5 8.5H3V20h3.5V8.5ZM4.75 3a2 2 0 1 0 0 4 2 2 0 0 0 0-4ZM21 13.4c0-3.5-1.9-5.2-4.4-5.2-2 0-2.9 1.1-3.4 1.9V8.5H9.7V20h3.5v-5.7c0-1.5.3-3 2.2-3 1.9 0 1.9 1.8 1.9 3.1V20H21v-6.6Z"/></symbol>
     <symbol id="icon-whatsapp" viewBox="0 0 24 24"><path d="M20.5 11.8a8.5 8.5 0 0 1-12.6 7.5L3 21l1.6-4.7a8.5 8.5 0 1 1 15.9-4.5Z"/><path d="M8.2 7.8c.3 3.9 2.2 5.8 6 7.1l1.7-1.6-2.2-1.1-.8.9c-1.6-.6-2.8-1.8-3.4-3.3l.9-.8-1.1-2.2-1.1 1Z"/></symbol>
     <symbol id="icon-location" viewBox="0 0 24 24"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
   </svg>`;
@@ -119,6 +122,7 @@ const socialLinks = `
       <a class="social-icon social-icon--active" href="https://www.instagram.com/amef163?igsh=ZDBleW5qMDBtZGI2&amp;utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="AMEF on Instagram" title="Instagram"><svg aria-hidden="true"><use href="#icon-instagram"></use></svg></a>
       <a class="social-icon social-icon--active" href="https://www.youtube.com/@ASABAMEMORIALEDUCATIONFOUNDATI" target="_blank" rel="noopener noreferrer" aria-label="AMEF on YouTube" title="YouTube"><svg aria-hidden="true"><use href="#icon-youtube"></use></svg></a>
       <a class="social-icon social-icon--active" href="https://x.com/asabamef?s=11" target="_blank" rel="noopener noreferrer" aria-label="AMEF on X" title="X"><svg aria-hidden="true"><use href="#icon-x"></use></svg></a>
+      <a class="social-icon social-icon--active" href="https://www.linkedin.com/in/asaba-memorial-education-foundation-42862942b" target="_blank" rel="noopener noreferrer" aria-label="AMEF on LinkedIn" title="LinkedIn"><svg aria-hidden="true"><use href="#icon-linkedin"></use></svg></a>
       <a class="social-icon social-icon--active" href="https://wa.me/256775749226" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp AMEF at +256 775 749226" title="WhatsApp"><svg aria-hidden="true"><use href="#icon-whatsapp"></use></svg></a>
     </div>
     <small>Follow AMEF on social media or contact us on WhatsApp</small>
@@ -134,6 +138,10 @@ if (headerTarget) {
             <a class="topbar__link" href="tel:+256766610442">
               <svg class="icon" aria-hidden="true"><use href="#icon-phone"></use></svg>
               <span>+256 766 610442</span>
+            </a>
+            <a class="topbar__link" href="https://wa.me/256775749226" target="_blank" rel="noopener noreferrer">
+              <svg class="icon" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
+              <span>+256 775 749226</span>
             </a>
             <a class="topbar__link" href="mailto:info@amefuganda.org">
               <svg class="icon" aria-hidden="true"><use href="#icon-mail"></use></svg>
@@ -157,6 +165,9 @@ if (headerTarget) {
               </a>
               <a class="social-icon" href="https://x.com/asabamef?s=11" target="_blank" rel="noopener noreferrer" aria-label="AMEF on X" title="X">
                 <svg aria-hidden="true"><use href="#icon-x"></use></svg>
+              </a>
+              <a class="social-icon" href="https://www.linkedin.com/in/asaba-memorial-education-foundation-42862942b" target="_blank" rel="noopener noreferrer" aria-label="AMEF on LinkedIn" title="LinkedIn">
+                <svg aria-hidden="true"><use href="#icon-linkedin"></use></svg>
               </a>
             </div>
             <form class="topbar__search" action="/search/" method="get">
@@ -197,11 +208,12 @@ if (footerTarget) {
               <a class="social-icon social-icon--active" href="https://www.instagram.com/amef163?igsh=ZDBleW5qMDBtZGI2&amp;utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="AMEF on Instagram" title="Instagram"><svg aria-hidden="true"><use href="#icon-instagram"></use></svg></a>
               <a class="social-icon social-icon--active" href="https://www.youtube.com/@ASABAMEMORIALEDUCATIONFOUNDATI" target="_blank" rel="noopener noreferrer" aria-label="AMEF on YouTube" title="YouTube"><svg aria-hidden="true"><use href="#icon-youtube"></use></svg></a>
               <a class="social-icon social-icon--active" href="https://x.com/asabamef?s=11" target="_blank" rel="noopener noreferrer" aria-label="AMEF on X" title="X"><svg aria-hidden="true"><use href="#icon-x"></use></svg></a>
+              <a class="social-icon social-icon--active" href="https://www.linkedin.com/in/asaba-memorial-education-foundation-42862942b" target="_blank" rel="noopener noreferrer" aria-label="AMEF on LinkedIn" title="LinkedIn"><svg aria-hidden="true"><use href="#icon-linkedin"></use></svg></a>
               <a class="social-icon social-icon--active" href="https://wa.me/256775749226" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp AMEF at +256 775 749226" title="WhatsApp"><svg aria-hidden="true"><use href="#icon-whatsapp"></use></svg></a>
             </div>
           </div>
         </div>
-        <div class="footer__links"><h3>Important Links</h3><a href="/about/">Our story</a><a href="/our-work/">What we do</a><a href="/get-involved/">Get involved</a><a href="/contact/">Contact</a></div>
+        <div class="footer__links"><h3>Important Links</h3><a href="/about/">Our story</a><a href="/our-work/">What we do</a><a href="/get-involved/">Get involved</a><a href="/policies/">Policies</a><a href="/contact/">Contact</a></div>
         <div class="footer__links"><h3>Projects</h3><a href="/amhs/">Asaba Memorial High School</a><a href="/sifa-skilling-centre/">Sifa Skilling Hub (SSH)</a><a href="/our-work/">Health & awareness</a><a href="/our-work/">Livelihoods</a></div>
         <div class="footer__location"><h3>Physical Location</h3><address><svg class="icon" aria-hidden="true"><use href="#icon-location"></use></svg><span>Kitanyata 1 Village, Kiruli Sub-county, Masindi, Uganda</span></address><div class="footer__location-contact"><a href="tel:+256766610442"><svg class="icon" aria-hidden="true"><use href="#icon-phone"></use></svg><span>Call us: +256 766 610442</span></a><a href="https://wa.me/256775749226" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#icon-whatsapp"></use></svg><span>WhatsApp us: +256 775 749226</span></a><a href="mailto:info@amefuganda.org"><svg class="icon" aria-hidden="true"><use href="#icon-mail"></use></svg><span>info@amefuganda.org</span></a></div></div>
       </div>
