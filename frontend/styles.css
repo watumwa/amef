@@ -3163,9 +3163,19 @@ button {
 
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 18px;
+  gap: 28px;
   margin-top: 54px;
+}
+
+.team-grid__row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 292px));
+  justify-content: center;
+  gap: 18px;
+}
+
+.team-grid__row--single {
+  grid-template-columns: minmax(0, 292px);
 }
 
 .team-card {
@@ -6151,10 +6161,6 @@ button {
 
 /* Inner-page responsive */
 @media (max-width: 1120px) {
-  .team-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
   .learning-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -7364,8 +7370,12 @@ button {
 }
 
 @media (max-width: 760px) and (min-width: 621px) {
-  .team-grid {
+  .team-grid__row {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .team-grid__row--single {
+    grid-template-columns: minmax(0, calc(50% - 9px));
   }
 }
 
@@ -7377,6 +7387,11 @@ button {
   }
 
   .team-grid {
+    gap: 22px;
+  }
+
+  .team-grid__row,
+  .team-grid__row--single {
     grid-template-columns: 1fr;
     gap: 22px;
   }
