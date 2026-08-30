@@ -7,13 +7,13 @@ const navItems = [
   { id: "home", href: "/", label: "Home" },
   {
     id: "about",
-    activePages: ["about", "success-story"],
+    activePages: ["about", "success-story", "partners"],
     label: "About Us",
     children: [
       ["/about/#who-we-are", "Who we are"],
       ["/about/#our-history", "Our History"],
       ["/about/#our-team", "Our Team"],
-      ["/get-involved/?interest=Partnership", "Partners"],
+      ["/partners/", "Partners"],
       ["/#story", "Success Stories"],
     ],
   },

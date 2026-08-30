@@ -13,6 +13,7 @@ A responsive multi-page website for the Asaba Memorial Education Foundation, bui
 - `/search/` — site-wide search
 - `/sifa-skilling-centre/` — Sifa Skilling Hub (SSH)
 - `/get-involved/` — Support and partnership pathways
+- `/partners/` — Partnership opportunities and collaboration pathway
 - `/sponsor-a-child/` — Child sponsorship information and interest pathway
 - `/volunteer/` — Volunteer information and application pathway
 - `/careers/` — Confirmed vacancies and future career guidance

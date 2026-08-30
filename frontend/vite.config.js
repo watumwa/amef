@@ -13,6 +13,7 @@ export default defineConfig({
         news: resolve(import.meta.dirname, "news/index.html"),
         sifa: resolve(import.meta.dirname, "sifa-skilling-centre/index.html"),
         involved: resolve(import.meta.dirname, "get-involved/index.html"),
+        partners: resolve(import.meta.dirname, "partners/index.html"),
         sponsor: resolve(import.meta.dirname, "sponsor-a-child/index.html"),
         volunteer: resolve(import.meta.dirname, "volunteer/index.html"),
         careers: resolve(import.meta.dirname, "careers/index.html"),

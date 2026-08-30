@@ -7,6 +7,7 @@ const searchableRoutes = [
   "/news/",
   "/sifa-skilling-centre/",
   "/get-involved/",
+  "/partners/",
   "/sponsor-a-child/",
   "/volunteer/",
   "/careers/",
