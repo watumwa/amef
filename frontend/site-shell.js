@@ -7,6 +7,7 @@ const navItems = [
   { id: "home", href: "/", label: "Home" },
   {
     id: "about",
+    activePages: ["about", "success-story"],
     label: "About Us",
     children: [
       ["/about/#who-we-are", "Who we are"],
@@ -37,7 +38,7 @@ const navItems = [
       ["/careers/", "Careers"],
     ],
   },
-  { id: "news", href: "/#news-and-updates", label: "News & Updates" },
+  { id: "news", href: "/news/", label: "News & Updates" },
   { id: "contact", href: "/contact/", label: "Contact Us" },
 ];
 

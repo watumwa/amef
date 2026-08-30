@@ -9,6 +9,8 @@ export default defineConfig({
         about: resolve(import.meta.dirname, "about/index.html"),
         work: resolve(import.meta.dirname, "our-work/index.html"),
         amhs: resolve(import.meta.dirname, "amhs/index.html"),
+        brassBandStory: resolve(import.meta.dirname, "success-stories/brass-band-club/index.html"),
+        news: resolve(import.meta.dirname, "news/index.html"),
         sifa: resolve(import.meta.dirname, "sifa-skilling-centre/index.html"),
         involved: resolve(import.meta.dirname, "get-involved/index.html"),
         sponsor: resolve(import.meta.dirname, "sponsor-a-child/index.html"),

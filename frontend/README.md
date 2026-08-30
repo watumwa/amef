@@ -8,6 +8,8 @@ A responsive multi-page website for the Asaba Memorial Education Foundation, bui
 - `/about/` — Foundation history and purpose
 - `/our-work/` — All programme areas
 - `/amhs/` — Asaba Memorial High School
+- `/success-stories/brass-band-club/` — Brass Band Club success story
+- `/news/` — News, updates and full success stories
 - `/search/` — site-wide search
 - `/sifa-skilling-centre/` — Sifa Skilling Hub (SSH)
 - `/get-involved/` — Support and partnership pathways

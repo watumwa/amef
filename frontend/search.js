@@ -3,6 +3,8 @@ const searchableRoutes = [
   "/about/",
   "/our-work/",
   "/amhs/",
+  "/success-stories/brass-band-club/",
+  "/news/",
   "/sifa-skilling-centre/",
   "/get-involved/",
   "/sponsor-a-child/",

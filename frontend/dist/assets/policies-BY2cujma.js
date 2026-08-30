@@ -1,0 +1,1 @@
+import"./styles-BUZOWO6R.js";import"./site-shell-C5nbD_2k.js";const o="/assets/AMEF_CHILD_PROTECTION_POLICY_VERSION_1.0-4s1F-1bG.pdf",t="/assets/AMEF_PSEAH_Policy_version%201.0-isL3EekG.pdf",c={"child-pdf":o,"pseah-pdf":t};document.querySelectorAll("[data-policy]").forEach(s=>{s.href=c[s.dataset.policy]});
