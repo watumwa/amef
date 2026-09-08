@@ -1813,6 +1813,15 @@ button {
   object-position: center 42%;
 }
 
+.news-feature-story__image--textbooks {
+  aspect-ratio: 16 / 9;
+  background: #ebe4d8;
+}
+
+.news-feature-story__image--textbooks img {
+  object-position: center;
+}
+
 .news-feature-story__image > span {
   position: absolute;
   right: 24px;
@@ -1897,6 +1906,39 @@ button {
   font-weight: 500;
 }
 
+.news-feature-story__quote {
+  margin: 30px 0 0;
+  padding: 26px 30px;
+  color: var(--white);
+  border-left: 5px solid var(--gold-bright);
+  background: rgba(255, 255, 255, 0.08);
+  font-family: var(--serif);
+  font-size: clamp(1.12rem, 1.8vw, 1.42rem);
+  line-height: 1.62;
+}
+
+.news-feature-story__quote--gold {
+  color: var(--navy);
+  background: var(--gold-bright);
+}
+
+.news-feature-story__quote + p {
+  margin-top: 26px;
+}
+
+.news-feature-story__quote cite {
+  display: block;
+  margin-top: 18px;
+  color: var(--gold-bright);
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-style: normal;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  line-height: 1.45;
+  text-transform: uppercase;
+}
+
 .news-feature-story__benefits {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1944,6 +1986,11 @@ button {
   aspect-ratio: 4 / 4.6;
   object-fit: cover;
   object-position: center top;
+}
+
+.news-feature-story__student--wide img {
+  aspect-ratio: 16 / 9;
+  object-position: center;
 }
 
 .news-feature-story__student > div {
@@ -2130,6 +2177,10 @@ button {
 
   .news-feature-story__student img {
     height: 100%;
+  }
+
+  .news-feature-story__student--wide img {
+    height: auto;
   }
 }
 
