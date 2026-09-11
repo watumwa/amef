@@ -33,7 +33,7 @@ npm run dev
 npm run build
 ```
 
-Vercel is configured from the repository root through `../vercel.json`; do not select the Next.js framework preset for this project.
+Vercel can use either the repository root through `../vercel.json` or this directory as its Root Directory through `./vercel.json`; do not select the Next.js framework preset for this project.
 
 ## Content and launch notes
 
