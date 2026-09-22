@@ -4440,10 +4440,21 @@ button {
   color: var(--muted);
 }
 
+.team-heading__subheading {
+  margin: 54px 0 0;
+  color: var(--navy);
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 2vw, 2.7rem);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1.2;
+  text-align: center;
+}
+
 .team-grid {
   display: grid;
   gap: 28px;
-  margin-top: 54px;
+  margin-top: 30px;
 }
 
 .team-grid__row {
