@@ -8,6 +8,7 @@ export default defineConfig({
         home: resolve(import.meta.dirname, "index.html"),
         about: resolve(import.meta.dirname, "about/index.html"),
         work: resolve(import.meta.dirname, "our-work/index.html"),
+        childProtect: resolve(import.meta.dirname, "child-protect/index.html"),
         amhs: resolve(import.meta.dirname, "amhs/index.html"),
         brassBandStory: resolve(import.meta.dirname, "success-stories/brass-band-club/index.html"),
         news: resolve(import.meta.dirname, "news/index.html"),

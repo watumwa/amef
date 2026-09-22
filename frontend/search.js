@@ -2,6 +2,7 @@ const searchableRoutes = [
   "/",
   "/about/",
   "/our-work/",
+  "/child-protect/",
   "/amhs/",
   "/success-stories/brass-band-club/",
   "/news/",
