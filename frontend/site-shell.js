@@ -20,7 +20,7 @@ const navItems = [
   {
     id: "work",
     activePages: ["work", "amhs", "sifa", "child-protect"],
-    label: "What we Do",
+    label: "What We Do",
     children: [
       ["/our-work/#education", "Education"],
       ["/our-work/#health-care", "Health Care"],
