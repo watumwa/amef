@@ -19,12 +19,13 @@ const navItems = [
   },
   {
     id: "work",
-    activePages: ["work", "livelihood", "amhs", "sifa", "child-protect"],
+    activePages: ["work", "education", "health-care", "livelihood", "amhs", "sifa", "child-protect"],
     label: "What We Do",
     children: [
-      ["/our-work/#education", "Education"],
-      ["/our-work/#health-care", "Health Care"],
+      ["/our-work/", "Our Work Overview"],
+      ["/education/", "Education"],
       ["/livelihood/", "Livelihood"],
+      ["/health-care/", "Health Care"],
       ["/child-protect/", "Child Protection"],
     ],
   },

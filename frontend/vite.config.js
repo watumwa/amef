@@ -8,6 +8,8 @@ export default defineConfig({
         home: resolve(import.meta.dirname, "index.html"),
         about: resolve(import.meta.dirname, "about/index.html"),
         work: resolve(import.meta.dirname, "our-work/index.html"),
+        education: resolve(import.meta.dirname, "education/index.html"),
+        healthCare: resolve(import.meta.dirname, "health-care/index.html"),
         livelihood: resolve(import.meta.dirname, "livelihood/index.html"),
         childProtect: resolve(import.meta.dirname, "child-protect/index.html"),
         amhs: resolve(import.meta.dirname, "amhs/index.html"),
