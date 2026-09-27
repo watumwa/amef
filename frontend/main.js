@@ -1,3 +1,7 @@
+import { setupNewsletterFrame } from "./newsletter-frame.js";
+
+setupNewsletterFrame();
+
 const menuToggle = document.querySelector("[data-menu-toggle]");
 const mobileMenu = document.querySelector("[data-mobile-menu]");
 const header = document.querySelector("[data-header]");

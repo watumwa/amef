@@ -1,5 +1,6 @@
 import mainLogoUrl from "./assets/main-logo.png";
 import footerLogoUrl from "./assets/logo-home-final.png";
+import { setupNewsletterFrame } from "./newsletter-frame.js";
 
 const page = document.body.dataset.page || "";
 
@@ -199,6 +200,13 @@ const footerTarget = document.querySelector("[data-site-footer]");
 if (footerTarget) {
   footerTarget.outerHTML = `
     <footer class="footer">
+      <div class="container footer-newsletter">
+        <div class="footer-newsletter__intro">
+          <h2 class="footer-newsletter__title">Stay Connected</h2>
+          <p>Get AMEF news, opportunities and impact stories delivered to your inbox.</p>
+        </div>
+        <iframe class="footer-newsletter__form" src="/newsletter-widget/" title="AMEF News &amp; Updates subscription" data-newsletter-frame loading="lazy" height="220" scrolling="no"></iframe>
+      </div>
       <div class="container footer__grid">
         <div class="footer__brand">
           <a class="brand brand--footer" href="/" aria-label="AMEF home">
@@ -223,6 +231,8 @@ if (footerTarget) {
       <div class="container footer__bottom"><p>© <span data-current-year></span> Asaba Memorial Education Foundation.</p><p>Education · Empowerment · Community</p></div>
     </footer>`;
 }
+
+setupNewsletterFrame();
 
 document.body.insertAdjacentHTML("afterbegin", iconSprite);
 

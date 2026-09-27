@@ -3878,6 +3878,57 @@ button {
   margin: 0;
 }
 
+.footer-newsletter {
+  display: grid;
+  grid-template-columns: minmax(230px, 1fr) minmax(320px, 0.9fr);
+  align-items: center;
+  gap: clamp(18px, 4vw, 54px);
+  padding-block: 14px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-newsletter__title {
+  margin: 0;
+  color: var(--white);
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.footer-newsletter__intro p {
+  max-width: 360px;
+  margin: 5px 0 0;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 0.76rem;
+  line-height: 1.45;
+}
+
+.footer-newsletter__form {
+  display: block;
+  width: 100%;
+  max-width: 480px;
+  justify-self: end;
+  min-width: 0;
+  height: 220px;
+  border: 0;
+  background: transparent;
+}
+
+@media (max-width: 900px) {
+  .footer-newsletter {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding-block: 14px;
+    margin-bottom: 14px;
+  }
+
+  .footer-newsletter__form {
+    justify-self: start;
+  }
+}
+
 /* Policies */
 .policies-hero {
   min-height: 420px;

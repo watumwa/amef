@@ -24,6 +24,7 @@ export default defineConfig({
         policies: resolve(import.meta.dirname, "policies/index.html"),
         contact: resolve(import.meta.dirname, "contact/index.html"),
         search: resolve(import.meta.dirname, "search/index.html"),
+        newsletterWidget: resolve(import.meta.dirname, "newsletter-widget/index.html"),
       },
     },
   },

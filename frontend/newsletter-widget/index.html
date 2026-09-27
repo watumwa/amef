@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css" />
+    <title>AMEF News &amp; Updates subscription</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-size: 14px;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        width: 100%;
+        min-width: 0;
+        margin: 0;
+      }
+
+      body {
+        overflow-x: hidden;
+        color: #fff;
+        background: transparent;
+        font-size: 14px;
+        line-height: 1.45;
+      }
+
+      .sib-form {
+        width: 100%;
+        min-width: 0;
+        min-height: 0;
+        padding: 0;
+        background: transparent;
+        text-align: left;
+      }
+
+      #sib-form-container,
+      #sib-container {
+        width: 100%;
+        max-width: none;
+        min-width: 0;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        color: inherit;
+        background: transparent;
+        box-shadow: none;
+        text-align: left;
+      }
+
+      #sib-form {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 144px;
+        grid-template-rows: auto auto;
+        align-items: start;
+        gap: 5px 12px;
+      }
+
+      .sib-input {
+        grid-column: 1 / -1;
+        min-width: 0;
+        padding: 0;
+      }
+
+      .sib-captcha {
+        grid-column: 1;
+        grid-row: 2;
+        min-width: 0;
+        padding: 0;
+      }
+
+      .sib-form > .sib-form-block:not(.sib-input):not(.sib-captcha) {
+        grid-column: 2;
+        grid-row: 2;
+        min-width: 0;
+        padding: 16px 0 0;
+      }
+
+      .form__label-row {
+        display: grid;
+        gap: 3px;
+      }
+
+      .entry__label {
+        color: rgba(255, 255, 255, 0.82);
+        font-size: 0.78rem;
+        font-weight: 650;
+      }
+
+      #EMAIL {
+        width: 100%;
+        height: 38px;
+        min-height: 38px;
+        padding: 5px 9px;
+        border: 1px solid rgba(255, 255, 255, 0.24);
+        border-radius: 4px;
+        box-sizing: border-box;
+        color: #151821;
+        background: #fff;
+        font: inherit;
+        line-height: 1.25;
+      }
+
+      #EMAIL:focus-visible {
+        outline: 3px solid rgba(209, 139, 0, 0.6);
+        outline-offset: 2px;
+      }
+
+      .entry__specification {
+        display: none;
+      }
+
+      .entry__error {
+        display: block;
+        color: #ffd0d0;
+        font-size: 0.76rem;
+      }
+
+      .sib-captcha .form__label-row {
+        min-height: 62px;
+        overflow: hidden;
+      }
+
+      .g-recaptcha {
+        transform: scale(0.8);
+        transform-origin: left top;
+      }
+
+      .sib-form-block__button {
+        width: 100%;
+        min-width: 112px;
+        min-height: 38px;
+        padding: 8px 10px;
+        border: 0;
+        border-radius: 4px;
+        color: #041b3c;
+        background: #d18b00;
+        cursor: pointer;
+        font: inherit;
+        font-weight: 750;
+        text-align: center;
+        white-space: nowrap;
+      }
+
+      .sib-form-block__button:hover {
+        background: #f3bb47;
+      }
+
+      .sib-form-block__button:focus-visible {
+        outline: 3px solid rgba(255, 255, 255, 0.75);
+        outline-offset: 2px;
+      }
+
+      .sib-form-block__button:disabled {
+        cursor: wait;
+        opacity: 0.7;
+      }
+
+      .sib-form-message-panel {
+        width: 100%;
+        margin: 0 0 8px;
+        padding: 10px 12px;
+        border-radius: 4px;
+        font-size: 0.84rem;
+        line-height: 1.45;
+      }
+
+      .sib-form-message-panel__text {
+        display: block;
+      }
+
+      .sib-notification__icon {
+        display: none;
+      }
+
+      @media (max-width: 380px) {
+        #sib-form {
+          grid-template-columns: minmax(0, 1fr);
+          grid-template-rows: auto auto auto;
+          gap: 5px;
+        }
+
+        .sib-captcha {
+          grid-column: 1;
+          grid-row: 2;
+        }
+
+        .sib-form > .sib-form-block:not(.sib-input):not(.sib-captcha) {
+          grid-column: 1;
+          grid-row: 3;
+          padding: 0;
+        }
+
+        .sib-captcha .form__label-row {
+          height: 64px;
+          min-height: 64px;
+        }
+
+        .g-recaptcha {
+          transform: scale(0.78);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sib-form">
+      <div id="sib-form-container" class="sib-form-container">
+        <div id="error-message" class="sib-form-message-panel" role="alert">
+          <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+            <span class="sib-form-message-panel__inner-text">Your subscription could not be saved. Please try again.</span>
+          </div>
+        </div>
+        <div id="success-message" class="sib-form-message-panel" role="status" aria-live="polite">
+          <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+            <span class="sib-form-message-panel__inner-text">Thanks for subscribing. You're connected with AMEF.</span>
+          </div>
+        </div>
+
+        <div id="sib-container" class="sib-container--large sib-container--vertical">
+          <form id="sib-form" method="POST" action="https://e70d2dca.sibforms.com/serve/MUIFAHRV3sXyaTeuGgcXiYl3ifEfkT4rJ_CcjlDlbdw2PlP8R_Vl-5LVMhILf4fjBUMNaaKCfGhNSP6s5pOwhgsKcRQHELYOEJvYDsiGw2EGMuuJPfikvYIzTkjiZjb6l_E7o4-hwrOOqQb2W-M-N9o-_uJ2GJwZesWWr-kliyyM4BfkGEY2bK4fWwJwQgRfoNfkJ6csKDjJW-BWPw==" data-type="subscription">
+            <div class="sib-input sib-form-block">
+              <div class="form__entry entry_block">
+                <div class="form__label-row">
+                  <label class="entry__label" for="EMAIL" data-required="*">Email address</label>
+                  <div class="entry__field">
+                    <input class="input" type="text" id="EMAIL" name="EMAIL" autocomplete="email" value="" placeholder="Email address" data-required="true" required />
+                  </div>
+                </div>
+                <label class="entry__error entry__error--primary"></label>
+                <label class="entry__specification">Provide your email address to subscribe.</label>
+              </div>
+            </div>
+
+            <div class="sib-captcha sib-form-block">
+              <div class="form__entry entry_block">
+                <div class="form__label-row">
+                  <script>
+                    function handleCaptchaResponse() {
+                      var event = new Event('captchaChange');
+                      document.getElementById('sib-captcha').dispatchEvent(event);
+                    }
+                  </script>
+                  <div class="g-recaptcha sib-visible-recaptcha" id="sib-captcha" data-sitekey="6Ld1wdEtAAAAAEg8kHnm3bwqEWFkHXP-KaA127x2" data-callback="handleCaptchaResponse" style="direction:ltr"></div>
+                </div>
+                <label class="entry__error entry__error--primary"></label>
+              </div>
+            </div>
+
+            <div class="sib-form-block">
+              <button class="sib-form-block__button sib-form-block__button-with-loader" form="sib-form" type="submit">
+                <svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 512 512" aria-hidden="true">
+                  <path d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z" />
+                </svg>
+                Subscribe
+              </button>
+            </div>
+
+            <input type="text" name="email_address_check" value="" class="input--hidden" />
+            <input type="hidden" name="locale" value="en" />
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      window.REQUIRED_CODE_ERROR_MESSAGE = 'Please choose a country code';
+      window.LOCALE = 'en';
+      window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "The information provided is invalid. Please review the field format and try again.";
+      window.REQUIRED_ERROR_MESSAGE = "This field cannot be left blank. ";
+      window.GENERIC_INVALID_MESSAGE = "The information provided is invalid. Please review the field format and try again.";
+      window.INVALID_NUMBER = "The information provided is invalid. Please review the field format and try again.";
+      window.INVALID_DATE = "Please enter a valid date";
+      window.REQUIRED_MULTISELECT_MESSAGE = 'Please select at least 1 option';
+      window.translation = {
+        common: {
+          selectedList: '{quantity} list selected',
+          selectedLists: '{quantity} lists selected',
+          selectedOption: '{quantity} selected',
+          selectedOptions: '{quantity} selected',
+        }
+      };
+      var AUTOHIDE = Boolean(1);
+
+      const successPanel = document.getElementById('success-message');
+      const successObserver = new MutationObserver(() => {
+        if (!successPanel.classList.contains('sib-form-message-panel--active')) return;
+        const message = successPanel.querySelector('.sib-form-message-panel__inner-text');
+        if (message && message.textContent !== "Thanks for subscribing. You're connected with AMEF.") {
+          message.textContent = "Thanks for subscribing. You're connected with AMEF.";
+        }
+      });
+      successObserver.observe(successPanel, { attributes: true, attributeFilter: ['class'], childList: true, subtree: true });
+
+      const notifyParent = () => {
+        parent.postMessage({ type: 'amef-newsletter-resize', height: document.body.scrollHeight }, location.origin);
+      };
+      new ResizeObserver(notifyParent).observe(document.body);
+      window.addEventListener('load', notifyParent);
+    </script>
+    <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js?hl=en"></script>
+  </body>
+</html>
