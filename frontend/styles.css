@@ -10306,3 +10306,16 @@ html {
     padding: 25px 22px;
   }
 }
+
+/* Homepage expansion card follows the existing project grid at every breakpoint. */
+#projects .project-card--community {
+  grid-column: 1 / -1;
+  min-height: 0;
+  padding-bottom: 90px;
+}
+
+/* Office labels share the existing footer address typography and colours. */
+.footer__office-label { display: block; margin-bottom: 4px; }
+.footer__location address + address { margin-top: 18px; }
+.footer__location address > span { min-width: 0; overflow-wrap: anywhere; }
+.footer__location address > .icon { flex-shrink: 0; }

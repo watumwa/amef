@@ -230,7 +230,17 @@ if (footerTarget) {
         </div>
         <div class="footer__links"><h3>Important Links</h3><a href="/about/">Our story</a><a href="/our-work/">What We Do</a><a href="/get-involved/">Get involved</a><a href="/policies/">Policies</a><a href="/contact/">Contact</a></div>
         <div class="footer__links"><h3>Projects</h3><a href="/amhs/">Asaba Memorial High School</a><a href="/sifa-skilling-centre/">Sifa Skilling Hub (SSH)</a><a href="/our-work/">Health & awareness</a><a href="/livelihood/">Livelihoods</a></div>
-        <div class="footer__location"><h3>Physical Location</h3><address><svg class="icon" aria-hidden="true"><use href="#icon-location"></use></svg><span>Kitanyata 1 Village, Kiruli Sub-county, Masindi, Uganda</span></address><div class="footer__location-contact"><a href="tel:+256766610442"><svg class="icon" aria-hidden="true"><use href="#icon-phone"></use></svg><span>Call us: +256 766 610442</span></a><a href="https://wa.me/2562009225226" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#icon-whatsapp"></use></svg><span>WhatsApp us: +2562009225226</span></a><a href="mailto:info@amefuganda.org"><svg class="icon" aria-hidden="true"><use href="#icon-mail"></use></svg><span>info@amefuganda.org</span></a></div></div>
+        <div class="footer__location">
+          <h3>Our Offices</h3>
+          <address>
+            <svg class="icon" aria-hidden="true"><use href="#icon-location"></use></svg>
+            <span><strong class="footer__office-label">HEAD OFFICE – MASINDI</strong><strong>Kitanyata 1 Village, Kiruli Sub-county, Masindi, Uganda</strong></span>
+          </address>
+          <address>
+            <svg class="icon" aria-hidden="true"><use href="#icon-location"></use></svg>
+            <span><strong class="footer__office-label">KIRYANDONGO FIELD OFFICE</strong><strong>Kiryandongo Refugee Settlement, Panyadoli, Bweyale Town Council, Kiryandongo District, Uganda</strong></span>
+          </address>
+          <div class="footer__location-contact"><a href="tel:+256766610442"><svg class="icon" aria-hidden="true"><use href="#icon-phone"></use></svg><span>Call us: +256 766 610442</span></a><a href="https://wa.me/2562009225226" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#icon-whatsapp"></use></svg><span>WhatsApp us: +2562009225226</span></a><a href="mailto:info@amefuganda.org"><svg class="icon" aria-hidden="true"><use href="#icon-mail"></use></svg><span>info@amefuganda.org</span></a></div></div>
       </div>
       <div class="container footer__bottom"><p>© <span data-current-year></span> Asaba Memorial Education Foundation.</p><p>Education · Empowerment · Community</p></div>
     </footer>`;
