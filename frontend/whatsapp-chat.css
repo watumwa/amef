@@ -1,0 +1,76 @@
+/* Leave room for the launcher below footer controls, including phone safe areas. */
+body { padding-bottom: calc(88px + env(safe-area-inset-bottom, 0px)); }
+.whatsapp-chat {
+  position: fixed;
+  right: max(16px, env(safe-area-inset-right, 0px));
+  bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  z-index: 95;
+  display: grid;
+  justify-items: end;
+  gap: 12px;
+  pointer-events: none;
+}
+.whatsapp-chat > * { pointer-events: auto; }
+.whatsapp-chat__panel {
+  width: min(370px, calc(100vw - 32px));
+  max-height: calc(100dvh - 240px - env(safe-area-inset-bottom, 0px));
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--cream);
+  box-shadow: var(--shadow);
+}
+.whatsapp-chat__panel[hidden] { display: none; }
+.whatsapp-chat__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 12px 12px 12px 20px;
+  color: var(--white);
+  background: var(--maroon);
+}
+.whatsapp-chat__header h2 { margin: 0; font: 700 1.25rem/1.4 var(--serif); color: inherit; }
+.whatsapp-chat__close {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: white;
+  font: 28px/1 var(--sans);
+  cursor: pointer;
+}
+.whatsapp-chat__close:hover { background: rgba(255,255,255,.15); }
+.whatsapp-chat__body { padding: 20px; }
+.whatsapp-chat__body p { margin: 0 0 20px; color: var(--ink); font: 400 0.9375rem/1.65 var(--sans); }
+.whatsapp-chat__link,
+.whatsapp-chat__toggle { background: #087c3e; color: white; }
+.whatsapp-chat__link {
+  display: block;
+  padding: 13px 16px;
+  border-radius: 8px;
+  text-align: center;
+  text-decoration: none;
+  font: 700 1rem/1.5 var(--sans);
+}
+.whatsapp-chat__toggle {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border: 2px solid white;
+  border-radius: 50%;
+  box-shadow: 0 4px 20px #041b3c30;
+  cursor: pointer;
+}
+.whatsapp-chat__toggle svg { width: 30px; height: 30px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.whatsapp-chat__link:hover,
+.whatsapp-chat__toggle:hover { background: #065f30; color: white; }
+.whatsapp-chat :is(button, a):focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+body:is(.menu-open, .dialog-open) .whatsapp-chat { visibility: hidden; }
+@media (max-height: 500px) {
+  .whatsapp-chat__panel { max-height: calc(100dvh - 108px); }
+}

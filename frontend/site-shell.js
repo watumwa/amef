@@ -1,3 +1,7 @@
+import { setupWhatsAppChat } from "./whatsapp-chat.js";
+
+setupWhatsAppChat();
+
 import mainLogoUrl from "./assets/main-logo.png";
 import footerLogoUrl from "./assets/logo-home-final.png";
 import { setupNewsletterFrame } from "./newsletter-frame.js";
@@ -127,7 +131,7 @@ const socialLinks = `
       <a class="social-icon social-icon--active" href="https://www.youtube.com/@ASABAMEMORIALEDUCATIONFOUNDATI" target="_blank" rel="noopener noreferrer" aria-label="AMEF on YouTube" title="YouTube"><svg aria-hidden="true"><use href="#icon-youtube"></use></svg></a>
       <a class="social-icon social-icon--active" href="https://x.com/asabamef?s=11" target="_blank" rel="noopener noreferrer" aria-label="AMEF on X" title="X"><svg aria-hidden="true"><use href="#icon-x"></use></svg></a>
       <a class="social-icon social-icon--active" href="https://www.linkedin.com/in/asaba-memorial-education-foundation-42862942b" target="_blank" rel="noopener noreferrer" aria-label="AMEF on LinkedIn" title="LinkedIn"><svg aria-hidden="true"><use href="#icon-linkedin"></use></svg></a>
-      <a class="social-icon social-icon--active" href="https://wa.me/256775749226" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp AMEF at +256 775 749226" title="WhatsApp"><svg aria-hidden="true"><use href="#icon-whatsapp"></use></svg></a>
+      <a class="social-icon social-icon--active" href="https://wa.me/2562009225226" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp AMEF at +2562009225226" title="WhatsApp"><svg aria-hidden="true"><use href="#icon-whatsapp"></use></svg></a>
     </div>
     <small>Follow AMEF on social media or contact us on WhatsApp</small>
   </div>`;
@@ -143,9 +147,9 @@ if (headerTarget) {
               <svg class="icon" aria-hidden="true"><use href="#icon-phone"></use></svg>
               <span>+256 766 610442</span>
             </a>
-            <a class="topbar__link" href="https://wa.me/256775749226" target="_blank" rel="noopener noreferrer">
+            <a class="topbar__link" href="https://wa.me/2562009225226" target="_blank" rel="noopener noreferrer">
               <svg class="icon" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
-              <span>+256 775 749226</span>
+              <span>+2562009225226</span>
             </a>
             <a class="topbar__link" href="mailto:info@amefuganda.org">
               <svg class="icon" aria-hidden="true"><use href="#icon-mail"></use></svg>
@@ -220,13 +224,13 @@ if (footerTarget) {
               <a class="social-icon social-icon--active" href="https://www.youtube.com/@ASABAMEMORIALEDUCATIONFOUNDATI" target="_blank" rel="noopener noreferrer" aria-label="AMEF on YouTube" title="YouTube"><svg aria-hidden="true"><use href="#icon-youtube"></use></svg></a>
               <a class="social-icon social-icon--active" href="https://x.com/asabamef?s=11" target="_blank" rel="noopener noreferrer" aria-label="AMEF on X" title="X"><svg aria-hidden="true"><use href="#icon-x"></use></svg></a>
               <a class="social-icon social-icon--active" href="https://www.linkedin.com/in/asaba-memorial-education-foundation-42862942b" target="_blank" rel="noopener noreferrer" aria-label="AMEF on LinkedIn" title="LinkedIn"><svg aria-hidden="true"><use href="#icon-linkedin"></use></svg></a>
-              <a class="social-icon social-icon--active" href="https://wa.me/256775749226" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp AMEF at +256 775 749226" title="WhatsApp"><svg aria-hidden="true"><use href="#icon-whatsapp"></use></svg></a>
+              <a class="social-icon social-icon--active" href="https://wa.me/2562009225226" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp AMEF at +2562009225226" title="WhatsApp"><svg aria-hidden="true"><use href="#icon-whatsapp"></use></svg></a>
             </div>
           </div>
         </div>
         <div class="footer__links"><h3>Important Links</h3><a href="/about/">Our story</a><a href="/our-work/">What We Do</a><a href="/get-involved/">Get involved</a><a href="/policies/">Policies</a><a href="/contact/">Contact</a></div>
         <div class="footer__links"><h3>Projects</h3><a href="/amhs/">Asaba Memorial High School</a><a href="/sifa-skilling-centre/">Sifa Skilling Hub (SSH)</a><a href="/our-work/">Health & awareness</a><a href="/livelihood/">Livelihoods</a></div>
-        <div class="footer__location"><h3>Physical Location</h3><address><svg class="icon" aria-hidden="true"><use href="#icon-location"></use></svg><span>Kitanyata 1 Village, Kiruli Sub-county, Masindi, Uganda</span></address><div class="footer__location-contact"><a href="tel:+256766610442"><svg class="icon" aria-hidden="true"><use href="#icon-phone"></use></svg><span>Call us: +256 766 610442</span></a><a href="https://wa.me/256775749226" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#icon-whatsapp"></use></svg><span>WhatsApp us: +256 775 749226</span></a><a href="mailto:info@amefuganda.org"><svg class="icon" aria-hidden="true"><use href="#icon-mail"></use></svg><span>info@amefuganda.org</span></a></div></div>
+        <div class="footer__location"><h3>Physical Location</h3><address><svg class="icon" aria-hidden="true"><use href="#icon-location"></use></svg><span>Kitanyata 1 Village, Kiruli Sub-county, Masindi, Uganda</span></address><div class="footer__location-contact"><a href="tel:+256766610442"><svg class="icon" aria-hidden="true"><use href="#icon-phone"></use></svg><span>Call us: +256 766 610442</span></a><a href="https://wa.me/2562009225226" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#icon-whatsapp"></use></svg><span>WhatsApp us: +2562009225226</span></a><a href="mailto:info@amefuganda.org"><svg class="icon" aria-hidden="true"><use href="#icon-mail"></use></svg><span>info@amefuganda.org</span></a></div></div>
       </div>
       <div class="container footer__bottom"><p>© <span data-current-year></span> Asaba Memorial Education Foundation.</p><p>Education · Empowerment · Community</p></div>
     </footer>`;

@@ -1,3 +1,7 @@
+import { setupWhatsAppChat } from "./whatsapp-chat.js";
+
+setupWhatsAppChat();
+
 import { setupNewsletterFrame } from "./newsletter-frame.js";
 
 setupNewsletterFrame();
